@@ -17,7 +17,7 @@ body{
     font-family: 'Lora', sans-serif;
     color: #fff;
     font-size: 100%;
-    background-image: url('/assets/images/homepage/home-image.webp');
+    background-image: url(/assets/images/homepage/home-image.webp);
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -73,7 +73,7 @@ a {
     color: #fedebe;
     display: flex;
     justify-content: flex-end;
-    font-size: 3.5em;
+    font-size: 3em;
     padding: inherit;
     text-shadow: 5px 5px 5px #000;
  }
