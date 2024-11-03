@@ -1,10 +1,10 @@
 # The Solar System Quiz Game
 
-![Responsive Mock-up](assets/images/docs/)
+![Responsive Mock-up](add mock up image here)
 
 #### **By Silviya Hristova**
 
-[Click here to view the live web application](add website)
+[Click here to view the live web application](https://silviyahristova.github.io/solar-system-quiz/)
 
 This is the documentation for The Solar System Quiz Game’s website. It has been built using HTML5, CSS3 and JavaScript for educational purposes as part of Code Institute’s Level 5 Diploma in Web Application Development.
 
@@ -34,7 +34,7 @@ This is the documentation for The Solar System Quiz Game’s website. It has bee
 
 The Solar System Quiz is a question and answer game in which knowledge or estimation questions are to be answered as correctly as possible. This is a responsive website and the topic of the questions is regarding the solar system. The site will target adults and children in a fun and educational way to show their knowledge or learn something new about our solar system.
 
-Click [**here**](add the website) to view the live website.
+Click [**here**](https://silviyahristova.github.io/solar-system-quiz/) to view the live website.
 
 ## User Experiences
 
@@ -77,13 +77,19 @@ To create the wireframes, the design tool Figma is used. There were fifteen fram
 
 <details><summary>Desktop</summary>
 
+<img src="assets/images/docs/Desktop-wireframes.webp">
+
 </details>
 
 <details><summary>Tablet</summary>
 
+<img src="assets/images/docs/Tablet-wireframes.webp">
+
 </details>
 
 <details><summary>Mobile</summary>
+
+<img src="assets/images/docs//Mobile-wireframes.webp">
 
 </details>
 
@@ -94,17 +100,17 @@ To create the wireframes, the design tool Figma is used. There were fifteen fram
 The color palette is selected based on the unique meaning of each colors and their combination together. Purple and violet colors promote harmony of the mind and the emotions, contributing to mental balance and stability, peace of mind, a link between the spiritual and the physical worlds, between thought and ativity.The color orange radiates warmth and happiness, combining the physical energy and stimulation of red with the cheerfulness of yellow. The color psychology of orange is optimistic and uplifting, rejuvenating our spirit. Peach encourages great communication and conversation. It inspires good manners and puts people at ease. It has all the attributes of orange but in a much softer, gentler and more cautious form. This version of orange encourages vitality and self-control. Using apricot can evoke feelings of warmth and friendliness. This color communicates a sense of comfort and approachability, making it ideal for creating inviting and cheerful spaces.
 The choice of colours will align with the colours of the images, used in the project. The palette were created using the site [Color-hex.com](https://www.color-hex.com/). Tints and Shades of these colours will be used also and are created using the site [Maketintsandshade.com](https://maketintsandshades.com/).
 
-![Colour Pallette](add color pallete image)
+![Colour Pallette](assets/images/docs/color-palette.webp)
 
 <details><summary>Tints and shades</summary>
 
-![Tints and shades](add tint and shades image)
+![Tints and shades](assets/images/docs/tintsandshades.webp)
 
 </details>
 
 **Typography**
 
-The fonts that will be used in the website will be imported from [Google Fonts](https://fonts.google.com/) and will be used [Engagement](https://fonts.google.com/specimen/Engagement) and [Lora](https://fonts.google.com/specimen/Lora). Semi-formal with a steady hand and soft contours, Engagement is a brush script that dances a line between vintage and modern flair.This classic calligraphic script font is perfect for amazing postcard designs, wedding invitation designs, image headings, and titling purposes. Lora is a well-balanced contemporary serif with roots in calligraphy. It is a text typeface with moderate contrast well suited for body text. A paragraph set in Lora will make a memorable appearance because of its brushed curves in contrast with driving serifs.
+The fonts that will be used in the website will be imported from [Google Fonts](https://fonts.google.com/) and will be used [Engagement](https://fonts.google.com/specimen/Engagement) and [Lora](https://fonts.google.com/specimen/Lora). Semi-formal with a steady hand and soft contours, Engagement is a brush script that dances a line between vintage and modern flair. This classic calligraphic script font is perfect for amazing postcard designs, wedding invitation designs, image headings, and titling purposes. Lora is a well-balanced contemporary serif with roots in calligraphy. It is a text typeface with moderate contrast well suited for body text. A paragraph set in Lora will make a memorable appearance because of its brushed curves in contrast with driving serifs.
 
 **Logo**
 
