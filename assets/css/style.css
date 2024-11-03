@@ -3,38 +3,141 @@
     padding: 0;
     border: 0;
     box-sizing: border-box;
+    overflow: hidden;
+}
+
+html, body {
+    margin: 0;
+    height: 100vh;
 }
 
 body{
+    width: 100%;
     font-family: 'Engagement', sans-serif;
     font-family: 'Lora', sans-serif;
-    color: #000, #fff;
-    background-color: #8188d9;
+    color: #fff;
     font-size: 100%;
+    background-image: url('/assets/images/homepage/home-image.webp');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    background-color: #8188d9;
 }
 
 /*-----------------------------------------------------------Header*/
-header {
-    position: relative;   
+
+header{
+    position: relative;
+    margin-bottom: 18%;
 }
 
 #logoimage {
-    float:left;
-    max-width: 10%;
-    height: auto;
-    padding: 5px;
+    width: 35%;
 }
 
-.nav-brand {
-    width: 79%;
-}
-
-img {
-    max-width: 100%;
-}
-
-h1 {
+.heading-font {
     font-family: 'Engagement', sans-serif;
-    font-size: 40px;
-    color:#fff;
+    font-size: 70px;
+    font-weight: 500;
+    margin: 0;
+    padding-bottom: 5px;
+}
+
+h2 {
+    font-family: 'Lora', sans-serif;
+    font-size: 30px;
+    font-style: italic;
+    margin-bottom: 0;
+    padding-bottom: 6px;
+}
+
+p {
+    font-family: 'Lora', sans-serif;
+    font-size: 16px;
+}
+
+.text-centre {
+    text-align: center;
+}
+
+.text-under-heading {
+    margin: 15px 50px;
+}
+
+a {
+    text-decoration: none;
+}
+
+ .question-mark {
+    color: #fedebe;
+    display: flex;
+    justify-content: flex-end;
+    font-size: 3.5em;
+    padding: inherit;
+    text-shadow: 5px 5px 5px #000;
+ }
+ 
+.centre{
+    display: flex;
+    flex-direction: column;
+    align-items: center;}
+
+#name-input {
+    background-color: #CEC5EC;
+    border: 1px #000 solid;
+    border-radius: 50px;
+    padding: 10px 15px;
+}
+
+::-webkit-input-placeholder {
+    font-style: italic;
+    color: #464545;
+}
+
+#game-start-btn {
+    font-size: 115%;
+    font-weight: 600;
+    background-color: #fedebe;
+    border: 1px #000 solid;
+    border-radius: 50px;
+    padding: 5px 30px;
+    margin: 12px;
+}
+
+.link {
+    color: #000;
+    font-size: 115%;
+    font-weight: 500;
+    background-color: #fedebe;
+    border: 1px #000 solid;
+    border-radius: 50px;
+    padding: 5px 30px;
+    margin: 15px;
+}
+
+.logo-link {
+    display: flex;
+    justify-content: center;
+}
+
+.social-media-link {
+    color: #fff;
+    font-size: 25px;
+    padding: 0 10px;
+}
+
+
+.like-btn {
+    display: flex;
+    justify-content: space-around;
+}
+/*-----------------------------------------------------------Media Queries*/
+
+@media screen and (max-width:320px) {
+
+}
+
+@media screen and (min-width: 321px) {
+
 }
