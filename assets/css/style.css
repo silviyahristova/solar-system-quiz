@@ -1,0 +1,40 @@
+*{  
+    margin: 0;
+    padding: 0;
+    border: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: 'Engagement', sans-serif;
+    font-family: 'Lora', sans-serif;
+    color: #000, #fff;
+    background-color: #8188d9;
+    font-size: 100%;
+}
+
+/*-----------------------------------------------------------Header*/
+header {
+    position: relative;   
+}
+
+#logoimage {
+    float:left;
+    max-width: 10%;
+    height: auto;
+    padding: 5px;
+}
+
+.nav-brand {
+    width: 79%;
+}
+
+img {
+    max-width: 100%;
+}
+
+h1 {
+    font-family: 'Engagement', sans-serif;
+    font-size: 40px;
+    color:#fff;
+}

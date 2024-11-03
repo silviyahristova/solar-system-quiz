@@ -24,14 +24,82 @@
     <link href="https://fonts.googleapis.com/css2?family=Engagement&family=Lora:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet">
 
     <!--fontawesome icons-->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://kit.fontawesome.com/65fc689ce4.js" crossorigin="anonymous"></script>
 
     <!-- style sheet -->
     <link rel="stylesheet" href="assets/css/style.css" type="text/css">
 
     <title>The Solar System Quiz Game</title>
+
 </head>
+
 <body>
+    <header>
+        <div class="container-fluid p-0">
+            <div class="row">
+                <div class="col-6">
+                    <a class="logo" href="index.html">
+                        <img src="assets/images/homepage/logo.webp" alt="The planet Earth" id="logoimage" 
+                            srcset="assets/images/homepage/logo.webp">
+                    </a>
+                </div>
+                <div id="question-icon" class="col-6"> 
+                    <i class="fa-solid fa-question question-mark"></i>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Home page -->
+    <section class="container-fluid p-0">
+        <div class="text-centre">
+            <h1 class="heading-font">The Solar system</h1>
+            <h2>Quiz game</h2>
+            <p class="text-under-heading">Are you ready to test your solar system knowledge?
+                <br> Are you a true space explorer? 
+                <br>Let`s find out with this fun, educational quiz.
+            </p>
+            
+            <!-- Name input and Start game -->
+            <div>
+                <form  method="POST" >
+                    <input class="text-centre" id="name-input" type="text" placeholder="Enter your name"
+                        aria-label="Enter your name" minlength="3" maxlength="15">
+                    <input type="submit" id="game-start-btn" value="Start Quiz">
+                </form>
+            </div>
+            <div class="container-fluid m-1">
+                <p class="text-under-heading">Do you hava a question or some feedback to share? We want to hear it!</p>
+                <div class="like-btn">
+                    <a class="link" href="contact.html">Contact us</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="container-fluid p-0">
+        <div class="logo-link">
+            <a class="social-media-link" href="https://github.com/silviyahristova" aria-label="GitHub" target="_blank"><i class="fa-brands fa-github"></i></a>
+            <a class="social-media-link" href="https://www.linkedin.com/in/silviyahristova93/" aria-label="LinkedIn" target="_blank"><i class="fa-brands fa-linkedin-in"></i></a>
+        </div>
+        <div class="text-centre center">
+            <span>Made by Silviya Hristova</span>
+        </div>
+    </footer>
+            
     
+
+
+
+
+
+
+
+
+
+
+
+
+
 </body>
 </html>
