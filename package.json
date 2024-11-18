@@ -1,0 +1,32 @@
+{
+  "dependencies": {
+    "chart.js": "^4.4.6",
+    "grunt": "^1.6.1",
+    "jquery": "^3.7.1"
+  },
+  "name": "solar-system-quiz",
+  "description": "This is a Solar system quiz game.",
+  "version": "1.0.0",
+  "main": "game.js",
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\"&& exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/silviyahristova/solar-system-quiz"
+  },
+  "keywords": [
+    "solar",
+    "system",
+    "planets",
+    "quiz",
+    "game"
+  ],
+  "author": "Silviya Hristova",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/silviyahristova/solar-system-quiz"
+  },
+  "homepage": "https://silviyahristova.github.io/solar-system-quiz/index.html"
+}
