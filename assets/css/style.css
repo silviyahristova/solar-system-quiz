@@ -3,36 +3,38 @@
   padding: 0;
   border: 0;
   box-sizing: border-box;
-  overflow-x: hidden;
+  /*overflow: hidden;*/
 }
 
 html,
 body {
-  margin: 0;
-  height: 100vh;
+  height: 100%;
+  width: 100%;
 }
 
 body {
-  width: 100%;
   font-family: "Engagement", sans-serif;
   font-family: "Lora", sans-serif;
   color: #fff;
   font-size: 100%;
 }
 
-/*-----------------------------------------------------------Header*/
+img {
+  max-width: 100%;
+  height: auto;
+}
 
+.color {
+  background-color: #fedebe;
+}
+
+/*-----------------------------------------------------------Header*/
 #home {
   background-image: url(/assets/images/homepage/home-image.webp);
-  background-position: center;
-  background-repeat: no-repeat;
+  background-color: #9d8cd9;
   background-size: cover;
+  background-repeat: no-repeat;
   background-attachment: fixed;
-  background-color: #8188d9;
-  background-size: 100% 100%;
-  -o-background-size: cover;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
 }
 
 header {
@@ -57,10 +59,12 @@ h2 {
   font-size: 30px;
   font-style: italic;
   margin-bottom: 0;
-  padding-bottom: 6px;
+  padding-bottom: 46px;
 }
 
-p {
+p,
+span,
+button {
   font-family: "Lora", sans-serif;
   font-size: 16px;
 }
@@ -70,7 +74,7 @@ p {
 }
 
 .text-under-heading {
-  margin: 0px 50px 5px;
+  margin: 0px 15px 1px;
 }
 
 a {
@@ -99,20 +103,83 @@ a {
   padding: 10px 15px;
 }
 
+form {
+  margin-top: 25px;
+}
+
 ::-webkit-input-placeholder {
   font-style: italic;
   color: #464545;
 }
 
-#game-start-btn {
+.start-btn {
   font-size: 115%;
   font-weight: 600;
   background-color: #fedebe;
   border: 1px #000 solid;
   border-radius: 50px;
   padding: 5px 30px;
-  margin: 12px;
+  margin: 12px 55px;
 }
+
+/*----------------------------------------------------------------Rules*/
+
+.rules-box {
+  background-image: url(/assets/images/homepage/rules-image.webp);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
+/*----------------------------------------------------------------Quiz*/
+
+.quiz-box {
+  position: relative;
+  background-image: url(/assets/images/homepage/quiz-image.webp);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
+.right-side {
+  float: right;
+  margin-right: 15px;
+  padding: 5px;
+}
+
+.answers {
+  display: flex;
+  justify-content: space-evenly;
+  flex-direction: column;
+  align-items: stretch;
+  margin: 25px 25px 15px 25px;
+}
+
+.answer-button {
+  margin: 4px;
+  padding: 10px;
+  border: 1px solid #000;
+  border-radius: 25px;
+  font-size: 17px;
+  background-color: #9d8cd9;
+  font-family: "Lora", sans-serif;
+}
+.buttons {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.restart-btn,
+.next-btn {
+  padding: 7px 25px;
+  border-radius: 25px;
+  margin-bottom: 15px;
+}
+
+.home-contact-box {
+  margin-top: 15px;
+}
+/*----------------------------------------------------------------Footer*/
 
 .link {
   color: #000;
@@ -128,7 +195,6 @@ a {
 .logo-link {
   display: flex;
   justify-content: center;
-  margin-top: 35px;
 }
 
 .social-media-link {
@@ -144,7 +210,42 @@ a {
 /*-----------------------------------------------------------Media Queries*/
 
 @media screen and (max-width: 320px) {
+  #logoimage {
+    width: 50%;
+  }
 }
 
 @media screen and (min-width: 321px) {
+  #logoimage {
+    width: 40%;
+  }
+}
+
+@media screen and (max-width: 575px) {
+  #logoimage {
+    width: 40%;
+  }
+}
+@media screen and (min-width: 576px) {
+  #logoimage {
+    width: 25%;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  #logoimage {
+    width: 20%;
+  }
+}
+
+@media screen and (min-width: 992px) {
+  #logoimage {
+    width: 15%;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  #logoimage {
+    width: 12%;
+  }
 }
