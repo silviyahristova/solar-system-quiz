@@ -282,10 +282,10 @@ form {
 .question-text {
   margin: 45px 45px 0px 45px;
   font-weight: 700;
-  font-size: 25px;
+  font-size: 23px;
 }
 
-.answers {
+.answers-list {
   display: flex;
   justify-content: space-evenly;
   flex-direction: column;
@@ -334,9 +334,11 @@ form {
 
 .quiz-box .btn-group .info-btn:nth-child(2):hover {
   background-color: #fb8610;
+  /*pointer-events: none;*/
   transition: 5s;
 }
 
+/*----------------------------------------------------------------Result section*/
 .result-box {
   background: url(../../assets/images/homepage/result-image.webp) center
     no-repeat fixed;
