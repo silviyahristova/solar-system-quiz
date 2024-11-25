@@ -2,13 +2,13 @@
   "dependencies": {
     "chart.js": "^4.4.6",
     "grunt": "^1.6.1",
-    "jquery": "^3.7.1"
+    "jquery": "^3.7.1",
+    "react": "^18.3.1"
   },
   "name": "solar-system-quiz",
   "description": "This is a Solar system quiz game.",
   "version": "1.0.0",
   "main": "game.js",
-  "devDependencies": {},
   "scripts": {
     "test": "echo \"Error: no test specified\"&& exit 1"
   },

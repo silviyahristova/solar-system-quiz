@@ -3,7 +3,7 @@
   padding: 0;
   border: 0;
   box-sizing: border-box;
-  /*overflow: hidden;*/
+  overflow: hidden;
 }
 
 html,
@@ -29,17 +29,24 @@ img {
 }
 
 /*-----------------------------------------------------------Header*/
-#home {
-  background-image: url(/assets/images/homepage/home-image.webp);
+#main.active {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+#home-box {
+  background-image: url(../../assets/images/homepage/home-image.webp);
   background-color: #9d8cd9;
   background-size: cover;
   background-repeat: no-repeat;
   background-attachment: fixed;
+  width: 100%;
+  height: 100vh;
 }
 
-header {
-  position: relative;
-  margin-bottom: 20px;
+#logo {
+  position: fixed;
+  background: transparent;
 }
 
 #logoimage {
@@ -52,6 +59,7 @@ header {
   font-weight: 500;
   margin: 0;
   padding-bottom: 5px;
+  padding-top: 80px;
 }
 
 h2 {
@@ -122,29 +130,159 @@ form {
   margin: 12px 55px;
 }
 
+.start-btn:hover {
+  background-color: #fb8610;
+}
+
 /*----------------------------------------------------------------Rules*/
 
 .rules-box {
-  background-image: url(/assets/images/homepage/rules-image.webp);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-image: url(../../assets/images/homepage/rules-image.webp);
   background-size: cover;
   background-repeat: no-repeat;
   background-attachment: fixed;
+  width: 100%;
+  height: 100vh;
+  opacity: 0;
+  pointer-events: none;
 }
 
+.rules-box.active {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.rules-box .btn-group {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.rules-box .btn-group .info-btn {
+  font-size: 115%;
+  font-weight: 600;
+  background-color: #fedebe;
+  border: 1px #000 solid;
+  border-radius: 50px;
+  padding: 5px 30px;
+  margin-top: 70px;
+  text-decoration: none;
+  color: #000;
+}
+
+.rules-box .btn-group .info-btn:nth-child(1) {
+  background: transparent;
+  color: #fedebe;
+  border: 1px solid #fedebe;
+}
+
+.rules-box .btn-group .info-btn:nth-child(1):hover {
+  background: #fedebe;
+  color: #000;
+}
+
+.rules-box .btn-group .info-btn:nth-child(2):hover {
+  background-color: #fb8610;
+  transition: 5s;
+}
 /*----------------------------------------------------------------Quiz*/
 
 .quiz-box {
-  position: relative;
-  background-image: url(/assets/images/homepage/quiz-image.webp);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  height: 100vh;
+  background-image: url(../../assets/images/homepage/quiz-image.webp);
   background-size: cover;
   background-repeat: no-repeat;
   background-attachment: fixed;
+  color: #000;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.quiz-box.active {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.box {
+  width: 100%;
 }
 
 .right-side {
   float: right;
-  margin-right: 15px;
-  padding: 5px;
+  padding: 8px;
+}
+
+.score-box {
+  border: 1px solid #000;
+  background-color: #fedebe;
+  width: 35px;
+  height: 15px;
+  font-weight: 700;
+  padding: 2px 12px;
+  border-radius: 5px;
+  color: #000;
+}
+
+.sound input[type="checkbox"] {
+  visibility: hidden;
+  cursor: pointer;
+  margin: 8px;
+}
+
+.sound input[type="checkbox"]::after {
+  display: block;
+  content: "Off";
+  position: absolute;
+  visibility: visible;
+  height: 25px;
+  width: 35px;
+  text-align: center;
+  border-radius: 4px;
+  background-color: #9d8cd9;
+  color: #000;
+  font-weight: 700;
+  cursor: pointer;
+  border: 1px solid #000;
+}
+
+.sound input[type="checkbox"]:checked:after {
+  content: "On";
+  background-color: #fedebe;
+  border: 1px solid #000;
+}
+
+.progressbar {
+  padding-top: 50px;
+  margin: 0 40px;
+}
+
+.count-question {
+  float: left;
+}
+
+.progress {
+  width: 100%;
+  height: 8px;
+  border: 1px solid;
+}
+
+.timer {
+  margin-right: 35px;
+}
+
+.question-text {
+  margin: 45px 45px 0px 45px;
+  font-weight: 700;
+  font-size: 25px;
 }
 
 .answers {
@@ -164,16 +302,44 @@ form {
   background-color: #9d8cd9;
   font-family: "Lora", sans-serif;
 }
-.buttons {
+
+.quiz-box .btn-group {
   display: flex;
   justify-content: space-evenly;
+  align-items: center;
 }
 
-.restart-btn,
-.next-btn {
-  padding: 7px 25px;
-  border-radius: 25px;
-  margin-bottom: 15px;
+.quiz-box .btn-group .info-btn {
+  font-size: 115%;
+  font-weight: 600;
+  background-color: #fedebe;
+  border: 1px #000 solid;
+  border-radius: 50px;
+  padding: 5px 30px;
+  margin-top: 30px;
+  text-decoration: none;
+  color: #000;
+}
+
+.quiz-box .btn-group .info-btn:nth-child(1) {
+  background: transparent;
+  color: #fedebe;
+  border: 1px solid #000;
+}
+
+.quiz-box .btn-group .info-btn:nth-child(1):hover {
+  background: #fedebe;
+  color: #000;
+}
+
+.quiz-box .btn-group .info-btn:nth-child(2):hover {
+  background-color: #fb8610;
+  transition: 5s;
+}
+
+.result-box {
+  background: url(../../assets/images/homepage/result-image.webp) center
+    no-repeat fixed;
 }
 
 .home-contact-box {
@@ -205,7 +371,7 @@ form {
 
 .like-btn {
   display: flex;
-  justify-content: space-around;
+  flex-direction: column;
 }
 /*-----------------------------------------------------------Media Queries*/
 
