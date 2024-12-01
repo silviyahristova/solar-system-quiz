@@ -4,7 +4,7 @@ const exitButton = document.getElementById('exit-btn');
 const main = document.getElementById('main');
 const continueButton = document.getElementById('continue-btn');
 const quizBox = document.getElementById('quiz-box');
-const nextButton = document.getElementById('next-button');
+const nextButton = document.querySelector('.next-btn');
 const restartButton = document.getElementById('restart-button');
 const answerList = document.querySelector(`.answers-list`)
 
@@ -14,6 +14,7 @@ let questionCount = 0;
 let maxQuestions = 10;
 let questionNumb = 1;
 let username;
+let userScore = 0;
 
 startButton.onclick = () => {
     rulesBox.classList.add('active');
@@ -31,6 +32,7 @@ continueButton.onclick = () => {
     main.classList.remove('active');
     showQuestion(0);
     questionCounter(1);
+    countScore();
 }
 
 nextButton.onclick = () => {
@@ -40,6 +42,8 @@ nextButton.onclick = () => {
 
     questionNumb++;
     questionCounter(questionNumb);
+
+    nextButton.classList.remove('active');
 
     }else{
         console.log('Questions Completed!')
@@ -81,6 +85,8 @@ function answerSelected(answer){
         let sound = new Audio ();
         sound.src = 'assets/sound/correct-answer.mp3';
         sound.play();
+        userScore += 1;
+        countScore();
     } else {
         answer.classList.add('incorrect');
         let sound = new Audio();
@@ -100,9 +106,15 @@ function answerSelected(answer){
         answerList.children[i].classList.add('disabled');
     }
 
+    nextButton.classList.add('active');
 }
 
 function questionCounter (index) {
     const questionTotal = document.querySelector('.count-question');
     questionTotal.textContent = `Question ${index} of ${maxQuestions}`;
+}
+
+function countScore() {
+    const countScoreText = document.querySelector('.score-box');
+    countScoreText.textContent = `${userScore}`;
 }
