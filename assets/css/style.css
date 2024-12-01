@@ -303,6 +303,26 @@ form {
   font-family: "Lora", sans-serif;
 }
 
+.answer-button:hover {
+  border-color: #000;
+  background-color: #9aa0e1;
+}
+
+.answer-button.correct {
+  background-color: #fedebe;
+  border: 3px solid #000;
+  font-weight: 800;
+}
+
+.answer-button.incorrect {
+  background-color: #5339ac;
+  border: 1px solid #000;
+}
+
+.answer-button.disabled {
+  pointer-events: none;
+}
+
 .quiz-box .btn-group {
   display: flex;
   justify-content: space-evenly;
@@ -323,19 +343,28 @@ form {
 
 .quiz-box .btn-group .info-btn:nth-child(1) {
   background: transparent;
-  color: #fedebe;
+  color: #000;
   border: 1px solid #000;
 }
 
 .quiz-box .btn-group .info-btn:nth-child(1):hover {
-  background: #fedebe;
+  background: #fb8610;
   color: #000;
+}
+
+.quiz-box .btn-group .info-btn:nth-child(2) {
+  pointer-events: none;
 }
 
 .quiz-box .btn-group .info-btn:nth-child(2):hover {
   background-color: #fb8610;
-  /*pointer-events: none;*/
-  transition: 5s;
+  cursor: pointer;
+}
+
+.quiz-box .btn-group .info-btn:nth-child(2).active {
+  pointer-events: auto;
+  background-color: #fedebe;
+  border: 2px solid #000;
 }
 
 /*----------------------------------------------------------------Result section*/
@@ -346,6 +375,20 @@ form {
 
 .home-contact-box {
   margin-top: 15px;
+}
+
+/*----------------------------------------------------------------Contact page*/
+form {
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  margin: 5px;
+  align-items: center;
 }
 /*----------------------------------------------------------------Footer*/
 
