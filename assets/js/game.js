@@ -74,7 +74,7 @@ function showQuestion(index) {
 function answerSelected(answer){
     let userAnswer = answer.textContent;
     let correctAns = myQuestions[questionCount].correctAnswer;
-    
+    let allAnswers = answerList.children.length;
 
     if (userAnswer == correctAns) {
         answer.classList.add('correct');
@@ -86,9 +86,19 @@ function answerSelected(answer){
         let sound = new Audio();
         sound.src = 'assets/sound/wrong-answer.mp3';
         sound.play();
-
-    }
     
+        //showing correct answer, if wrong answer is clicked
+        for(let i = 0; i < allAnswers; i++) {
+            if (answerList.children[i].textContent == correctAns){
+                answerList.children[i].setAttribute('class','answer-button correct');
+            }
+        }
+    }
+
+    //disable all options after selecting an answer
+    for(let i = 0; i < allAnswers; i++){
+        answerList.children[i].classList.add('disabled');
+    }
 
 }
 
