@@ -64,6 +64,32 @@ function showQuestion(index) {
     <div class="answer-button"><span>${myQuestions[index].options[3]}</span></div>`;
 
     answerList.innerHTML  = optionTag;
+
+    const answerButton = document.querySelectorAll('.answer-button');
+    for (let i = 0; i < answerButton.length; i++){
+        answerButton[i].setAttribute('onclick','answerSelected(this)');  
+    }
+}
+
+function answerSelected(answer){
+    let userAnswer = answer.textContent;
+    let correctAns = myQuestions[questionCount].correctAnswer;
+    
+
+    if (userAnswer == correctAns) {
+        answer.classList.add('correct');
+        let sound = new Audio ();
+        sound.src = 'assets/sound/correct-answer.mp3';
+        sound.play();
+    } else {
+        answer.classList.add('incorrect');
+        let sound = new Audio();
+        sound.src = 'assets/sound/wrong-answer.mp3';
+        sound.play();
+
+    }
+    
+
 }
 
 function questionCounter (index) {
