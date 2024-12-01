@@ -1,5 +1,6 @@
 {
   "dependencies": {
+    "@emailjs/browser": "^4.4.1",
     "chart.js": "^4.4.6",
     "grunt": "^1.6.1",
     "jquery": "^3.7.1",
