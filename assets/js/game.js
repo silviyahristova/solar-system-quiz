@@ -8,8 +8,6 @@ const nextButton = document.querySelector('.next-btn');
 const restartButton = document.getElementById('restart-button');
 const answerList = document.querySelector(`.answers-list`)
 
-
-
 let questionCount = 0;
 let maxQuestions = 10;
 let questionNumb = 1;
@@ -71,56 +69,102 @@ restartButton.addEventListener('click', function () {
 });
 
 //question and option function
+// Shuffle the questions array
+function shuffleArray(arr) {
+    let currentIndex = arr.length, randomIndex, temporaryValue;
 
-function showQuestion(index) {
-    const questionText = document.getElementById('question-text');
-    questionText.textContent = `${myQuestions[index].questionNumber}. ${myQuestions[index].questionText}`;
-    
-    let optionTag = `<div class="answer-button"><span>${myQuestions[index].options[0]}</span></div>
-    <div class="answer-button"><span>${myQuestions[index].options[1]}</span></div>
-    <div class="answer-button"><span>${myQuestions[index].options[2]}</span></div>
-    <div class="answer-button"><span>${myQuestions[index].options[3]}</span></div>`;
+    // While there are elements to shuffle
+    while (currentIndex !== 0) {
+        randomIndex = Math.floor(Math.random() * currentIndex);
+        currentIndex -= 1;
 
-    answerList.innerHTML  = optionTag;
-
-    const answerButton = document.querySelectorAll('.answer-button');
-    for (let i = 0; i < answerButton.length; i++){
-        answerButton[i].setAttribute('onclick','answerSelected(this)');  
+        // Swap elements
+        temporaryValue = arr[currentIndex];
+        arr[currentIndex] = arr[randomIndex];
+        arr[randomIndex] = temporaryValue;
     }
+
+    return arr;
 }
 
-function answerSelected(answer){
-    let userAnswer = answer.textContent;
-    let correctAns = myQuestions[questionCount].correctAnswer;
-    let allAnswers = answerList.children.length;
+// Limit the number of questions to 10
+let shuffledQuestions = shuffleArray([...myQuestions]).slice(0, 10);
 
-    if (userAnswer == correctAns) {
+let currentQuestionIndex = 0;
+
+// Show question and answers
+function showQuestion(index) {
+    if (index >= shuffledQuestions.length) {
+        alert("You have completed the quiz!");
+        return;
+    }
+
+    const questionText = document.getElementById('question-text');
+    const currentQuestion = shuffledQuestions[index];
+    questionText.textContent = `${currentQuestion.questionText}`;
+
+    // Shuffle the options for the current question
+    const shuffledOptions = shuffleArray([...currentQuestion.options]);
+
+    // Shuffle options
+    let optionTag = shuffledOptions.map(option => {
+        return `<div class="answer-button"><span>${option}</span></div>`;
+    }).join('');
+
+    answerList.innerHTML = optionTag;
+
+    // Add event listeners to the answer buttons
+    const answerButtons = document.querySelectorAll('.answer-button');
+    answerButtons.forEach(button => {
+        button.addEventListener('click', () => answerSelected(button, index));
+    });
+}
+
+function answerSelected(answer, index) {
+    const currentQuestion = shuffledQuestions[index];
+    const userAnswer = answer.textContent.trim();
+    const correctAnswer = currentQuestion.options[currentQuestion.correctAnswer];
+
+    // Check if the selected answer is correct
+    if (userAnswer === correctAnswer) {
         answer.classList.add('correct');
-        let sound = new Audio ();
-        sound.src = 'assets/sound/correct-answer.mp3';
+        let sound = new Audio('assets/sound/correct-answer.mp3');
         sound.play();
         userScore += 1;
         countScore();
     } else {
         answer.classList.add('incorrect');
-        let sound = new Audio();
-        sound.src = 'assets/sound/wrong-answer.mp3';
+        let sound = new Audio('assets/sound/wrong-answer.mp3');
         sound.play();
-    
-        //showing correct answer, if wrong answer is clicked
-        for(let i = 0; i < allAnswers; i++) {
-            if (answerList.children[i].textContent == correctAns){
-                answerList.children[i].setAttribute('class','answer-button correct');
+        // Highlight the correct answer
+        const answerButtons = document.querySelectorAll('.answer-button');
+        answerButtons.forEach(button => {
+            if (button.textContent.trim() === correctAnswer) {
+                button.classList.add('correct');
             }
-        }
+        });
     }
 
-    //disable all options after selecting an answer
-    for(let i = 0; i < allAnswers; i++){
+    // Disable all options after selecting an answer
+    const allAnswers = answerList.children.length;
+    for (let i = 0; i < allAnswers; i++) {
         answerList.children[i].classList.add('disabled');
     }
 
     nextButton.classList.add('active');
+}
+
+// Show the first question
+showQuestion(currentQuestionIndex);
+
+// Move to next question
+function nextQuestion() {
+    if (currentQuestionIndex < shuffledQuestions.length - 1) {
+        currentQuestionIndex++;
+        showQuestion(currentQuestionIndex);
+    } else {
+        alert('You have completed the quiz!');
+    }
 }
 
 function questionCounter (index) {
