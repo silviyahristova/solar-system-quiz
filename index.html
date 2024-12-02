@@ -179,15 +179,15 @@
           Scores: <span class="score-box">0</span>
         </div>
         <div class="sound">
-          <span>Sound:<input type="checkbox" id="sound-toggle" /></span>
+          <span
+            >Sound:<input type="checkbox" id="sound-toggle" onclick=""
+          /></span>
         </div>
       </header>
 
       <section class="box">
         <div class="progressbar">
-          <span class="count-question" id="question-count"
-            >Question 1 of 10</span
-          >
+          <span class="count-question" id="question-count"></span>
           <div
             class="progress"
             role="progressbar"
@@ -195,25 +195,31 @@
             aria-valuemin="1"
             aria-valuemax="10"></div>
         </div>
-        <div class="timer right-side">Time: 60 sec</div>
+        <div class="timer right-side"></div>
       </section>
 
       <section class="text-centre">
-        <div class="question-text" id="question-text">
-          1. What are large, spherical objects that orbit the Sun called?
-        </div>
+        <div class="question-text" id="question-text">Question</div>
         <div class="answers-list" id="answers-box">
-          <div class="answer-button"><span>Planets</span></div>
-          <div class="answer-button"><span>Moon</span></div>
-          <div class="answer-button"><span>Stars</span></div>
-          <div class="answer-button"><span>Comets</span></div>
+          <div class="answer-button" onclick="answerSelected(this)">
+            <span>Option 1</span>
+          </div>
+          <div class="answer-button" onclick="answerSelected(this)">
+            <span>Option 2</span>
+          </div>
+          <div class="answer-button" onclick="answerSelected(this)">
+            <span>Option 3</span>
+          </div>
+          <div class="answer-button" onclick="answerSelected(this)">
+            <span>Option 4</span>
+          </div>
         </div>
       </section>
 
       <footer class="text-centre">
         <div class="btn-group">
           <button class="color info-btn" id="restart-button">Restart</button>
-          <button class="color info-btn" id="next-button">Next</button>
+          <button class="color info-btn next-btn" id="next-button">Next</button>
         </div>
       </footer>
     </div>
@@ -223,8 +229,12 @@
       <header class="heading-font">Result</header>
 
       <section>
-        <div>Chart</div>
-        <div class="message">
+        <div class="percentage">
+          <div class="circle">
+            <span class="percentage-value">0%</span>
+          </div>
+        </div>
+        <div class="win-message">
           Well done, Silviya!Your are a true space explorer!
         </div>
         <div>API youtube</div>
