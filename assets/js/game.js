@@ -13,12 +13,28 @@ const answerList = document.querySelector(`.answers-list`)
 let questionCount = 0;
 let maxQuestions = 10;
 let questionNumb = 1;
-let username;
+let username = document.getElementById("name-input");
 let userScore = 0;
 
 startButton.onclick = () => {
-    rulesBox.classList.add('active');
-    main.classList.add('active');
+    window.addEventListener("username", (event)=> {
+        event.preventDefault();
+        scrollToTop();
+
+        function scrollToTop() {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        }
+    })
+    // user name
+    if (username.value === "") {
+        alert(`Please enter your name to play!`);
+    } else {
+        rulesBox.classList.add('active');
+        main.classList.add('active'); ;
+    };
 }
 
 exitButton.onclick = () => {
@@ -50,11 +66,9 @@ nextButton.onclick = () => {
     }
 }
 
-restartButton.onclick = () => {
-    quizBox.classList.add('active');
-    rulesBox.classList.remove('active');
-    main.classList.remove('active');
-}
+restartButton.addEventListener('click', function () {
+    window.location.reload();
+});
 
 //question and option function
 
