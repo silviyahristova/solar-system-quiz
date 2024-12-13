@@ -6,13 +6,16 @@ const continueButton = document.getElementById('continue-btn');
 const quizBox = document.getElementById('quiz-box');
 const nextButton = document.querySelector('.next-btn');
 const restartButton = document.getElementById('restart-button');
-const answerList = document.querySelector(`.answers-list`)
+const answerList = document.querySelector(`.answers-list`);
 
 let questionCount = 0;
 let maxQuestions = 10;
 let questionNumb = 1;
 let username = document.getElementById("name-input");
 let userScore = 0;
+let countdown; 
+let timeLeft = 30;
+let timerSound = false;
 
 startButton.onclick = () => {
     window.addEventListener("username", (event)=> {
@@ -33,21 +36,22 @@ startButton.onclick = () => {
         rulesBox.classList.add('active');
         main.classList.add('active'); ;
     };
-}
+};
 
 exitButton.onclick = () => {
     rulesBox.classList.remove('active');
     main.classList.remove('active');
-}
+};
 
 continueButton.onclick = () => {
     quizBox.classList.add('active');
     rulesBox.classList.remove('active');
     main.classList.remove('active');
+    startTimer();
     showQuestion(0);
     questionCounter(1);
     countScore();
-}
+};
 
 nextButton.onclick = () => {
     if(questionCount < myQuestions.length -1){
@@ -59,10 +63,17 @@ nextButton.onclick = () => {
 
     nextButton.classList.remove('active');
 
+    // Reset the timer
+    stopTimer(); // Stop the previous timer
+    timeLeft = 30; // Reset time
+    startTimer(); // Start the new timer
+    timerSound = false; // Reset the timer sound flag
+
     }else{
-        console.log('Questions Completed!')
+        console.log('Questions Completed!');
+        stopTimer(); // Stop the timer when the quiz ends
     }
-}
+};
 
 restartButton.addEventListener('click', function () {
     window.location.reload();
@@ -122,7 +133,7 @@ const footerHTML = `
 
 const footerDiv = document.querySelectorAll('.boxes-logo');
 
-divs.forEach(div => {
+footerDiv.forEach(div => {
   const tempDiv = document.createElement('div');
   tempDiv.innerHTML = footerHTML; 
   const footerElement = tempDiv.firstElementChild; 
@@ -210,6 +221,7 @@ function answerSelected(answer, index) {
     const allAnswers = answerList.children.length;
     for (let i = 0; i < allAnswers; i++) {
         answerList.children[i].classList.add('disabled');
+        stopTimer();
     }
 
     nextButton.classList.add('active');
@@ -223,6 +235,7 @@ function nextQuestion() {
     if (currentQuestionIndex < shuffledQuestions.length - 1) {
         currentQuestionIndex++;
         showQuestion(currentQuestionIndex);
+        startTimer();  
     } else {
         alert('You have completed the quiz!');
     }
@@ -236,4 +249,38 @@ function questionCounter (index) {
 function countScore() {
     const countScoreText = document.querySelector('.score-box');
     countScoreText.textContent = `${userScore}`;
+}
+
+function startTimer() {
+    document.getElementById('timer').textContent = timeLeft;
+
+    countdown = setInterval(() => {
+        timeLeft--;
+        document.getElementById('timer').textContent = timeLeft;
+
+        // Play sound when 15 seconds are left
+        if (timeLeft === 15 && !timerSound) {
+            let sound = new Audio('assets/sound/timer-sound-15sec.mp3');
+            sound.play();
+            timerSound = true;
+        }
+
+        if (timeLeft <= 0) {
+            clearInterval(countdown);  // Clear the interval
+            document.getElementById('timer').textContent = "Time's up!";
+            handleTimeUp(); // Call a function when time's up
+        }
+    }, 1000);
+}
+
+// Stop the countdown timer
+function stopTimer() {
+    clearInterval(countdown);
+}
+
+// Handle time-up function
+function handleTimeUp() {
+    alert("Time's up! Moving to the next question.");
+    // Automatically trigger the "Next" button click to change the question with the next question
+    nextButton.onclick();
 }
