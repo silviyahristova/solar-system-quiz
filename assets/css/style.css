@@ -6,12 +6,6 @@
   overflow: hidden;
 }
 
-html,
-body {
-  height: 100%;
-  width: 100%;
-}
-
 body {
   font-family: "Engagement", sans-serif;
   font-family: "Lora", sans-serif;
@@ -59,7 +53,7 @@ img {
   font-weight: 500;
   margin: 0;
   padding-bottom: 5px;
-  padding-top: 80px;
+  padding-top: 40px;
 }
 
 h2 {
@@ -87,15 +81,6 @@ button {
 
 a {
   text-decoration: none;
-}
-
-.question-mark {
-  color: #fedebe;
-  display: flex;
-  justify-content: flex-end;
-  font-size: 3em;
-  padding: inherit;
-  text-shadow: 5px 5px 5px #000;
 }
 
 .centre {
@@ -282,6 +267,8 @@ form {
 
 .question-text {
   margin: 15px 25px 0px 25px;
+  background-color: #cec5ec;
+  border-radius: 25px;
   font-weight: 700;
   font-size: 23px;
 }
@@ -302,6 +289,7 @@ form {
   font-size: 17px;
   background-color: #9d8cd9;
   font-family: "Lora", sans-serif;
+  cursor: pointer;
 }
 
 .answer-button:hover {
@@ -311,13 +299,16 @@ form {
 
 .answer-button.correct {
   background-color: #fedebe;
-  border: 3px solid #000;
+  border: 3px solid #16990a;
   font-weight: 800;
+  color: #16990a;
 }
 
 .answer-button.incorrect {
-  background-color: #5339ac;
-  border: 1px solid #000;
+  background-color: #7454dd;
+  border: 1px solid #880606;
+  color: #880606;
+  font-weight: 800;
 }
 
 .answer-button.disabled {
@@ -355,6 +346,7 @@ form {
 
 .quiz-box .btn-group .info-btn:nth-child(2) {
   pointer-events: none;
+  background-color: transparent;
 }
 
 .quiz-box .btn-group .info-btn:nth-child(2):hover {
@@ -365,6 +357,12 @@ form {
 .quiz-box .btn-group .info-btn:nth-child(2).active {
   pointer-events: auto;
   background-color: #fedebe;
+  border: 2px solid #000;
+}
+
+.quiz-box .btn-group .info-btn:nth-child(2).active:hover {
+  pointer-events: auto;
+  background-color: #fb8610;
   border: 2px solid #000;
 }
 

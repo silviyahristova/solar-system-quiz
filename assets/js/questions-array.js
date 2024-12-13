@@ -163,7 +163,7 @@ const myQuestions = [
     },
     { 
         questionNumber: 28,
-        questionText: "What is at the center of our solar system" ,
+        questionText: "What is at the center of our solar system?" ,
         options : ["The Sun","A black hole","The Moon", "The Earth",],
         correctAnswer: 0
     },
