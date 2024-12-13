@@ -16,13 +16,14 @@ let username = document.getElementById("name-input");
 let userScore = 0;
 let countdown; 
 let timeLeft = 30;
-let timerSound = false;
 let soundOn = false;
 let backgroundMusic = new Audio('assets/sound/music.mp3');
 let soundCorrect = new Audio('assets/sound/correct-answer.mp3');
 let soundWrong = new Audio('assets/sound/wrong-answer.mp3');
 let soundTimer = new Audio('assets/sound/timer-sound-15sec.mp3');
 
+//Start button to start the quiz
+// Cannot continue without entering the name
 startButton.onclick = () => {
     window.addEventListener("username", (event)=> {
         event.preventDefault();
@@ -44,11 +45,14 @@ startButton.onclick = () => {
     };
 };
 
+//Exit button 
+//Return to main page
 exitButton.onclick = () => {
     rulesBox.classList.remove('active');
     main.classList.remove('active');
 };
 
+//Continue button
 continueButton.onclick = () => {
     quizBox.classList.add('active');
     rulesBox.classList.remove('active');
@@ -59,6 +63,7 @@ continueButton.onclick = () => {
     countScore();
 };
 
+//Next Button
 nextButton.onclick = () => {
     if(questionCount < myQuestions.length -1){
     questionCount++;
@@ -81,6 +86,8 @@ nextButton.onclick = () => {
     }
 };
 
+//Restart button 
+//Return to main page
 restartButton.addEventListener('click', function () {
     window.location.reload();
 });
@@ -198,6 +205,10 @@ function showQuestion(index) {
     });
 }
 
+//User select an answer
+// Correct or wrong answer
+// Coresponding sound
+//Disable buttons after clicking any answer
 function answerSelected(answer, index) {
     const currentQuestion = shuffledQuestions[index];
     const userAnswer = answer.textContent.trim();
@@ -208,14 +219,14 @@ function answerSelected(answer, index) {
         answer.classList.add('correct');
         if (soundOn) {
             soundCorrect.play();
-        }
+        } // Play sound only if sound is on
         userScore += 1;
         countScore();
     } else {
         answer.classList.add('incorrect');
         if (soundOn) {
             soundWrong.play();
-        }
+        } // Play sound only if sound is on
         // Highlight the correct answer
         const answerButtons = document.querySelectorAll('.answer-button');
         answerButtons.forEach(button => {
@@ -249,16 +260,19 @@ function nextQuestion() {
     }
 }
 
+//Count the question 
 function questionCounter (index) {
     const questionTotal = document.querySelector('.count-question');
     questionTotal.textContent = `Question ${index} of ${maxQuestions}`;
 }
 
+//Count the scores
 function countScore() {
     const countScoreText = document.querySelector('.score-box');
     countScoreText.textContent = `${userScore}`;
 }
 
+//Timer
 function startTimer() {
     document.getElementById('timer').textContent = timeLeft;
 
@@ -266,11 +280,11 @@ function startTimer() {
         timeLeft--;
         document.getElementById('timer').textContent = timeLeft;
 
-        // Play sound when 15 seconds are left
+        // Play sound when 15 seconds are left only if sound is enabled
         if (timeLeft === 15 && !timerSound) {
             if (soundOn) {
                 soundTimer.play();
-            }
+            } // Play sound if user toggle the button ON
             timerSound = true;
         }
 
@@ -294,6 +308,9 @@ function handleTimeUp() {
     nextButton.onclick();
 }
 
+// Sound toggle;
+// Sound is off by default;
+// Background music is continuosly played;
 backgroundMusic.loop = true; // music loops continuously
 
 soundToggle.addEventListener('change', () => {
@@ -304,14 +321,14 @@ soundToggle.addEventListener('change', () => {
         backgroundMusic.pause(); // Pause background music
         backgroundMusic.currentTime = 0; // Reset background music
 
-        soundTimer.pause();
-        soundTimer.currentTime = 0;
+        soundTimer.pause(); // Pause sound
+        soundTimer.currentTime = 0; // Reset sound
 
-        soundCorrect.pause();
-        soundCorrect.currentTime = 0;
+        soundCorrect.pause(); // Pause sound
+        soundCorrect.currentTime = 0; // Reset sound
 
-        soundWrong.pause();
-        soundWrong.currentTime = 0
+        soundWrong.pause(); // Pause sound
+        soundWrong.currentTime = 0 // Reset sound
     }
 });
 
