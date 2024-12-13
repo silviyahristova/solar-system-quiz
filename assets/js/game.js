@@ -17,6 +17,7 @@ let userScore = 0;
 let countdown; 
 let timeLeft = 30;
 let soundOn = false;
+let timerSound = false;
 let backgroundMusic = new Audio('assets/sound/music.mp3');
 let soundCorrect = new Audio('assets/sound/correct-answer.mp3');
 let soundWrong = new Audio('assets/sound/wrong-answer.mp3');
@@ -75,7 +76,7 @@ nextButton.onclick = () => {
     nextButton.classList.remove('active');
 
     // Reset the timer
-    stopTimer(); // Stop the previous timer
+    clearInterval(countdown); // Stop the previous timer
     timeLeft = 30; // Reset time
     startTimer(); // Start the new timer
     timerSound = false; // Reset the timer sound flag
@@ -241,6 +242,9 @@ function answerSelected(answer, index) {
     for (let i = 0; i < allAnswers; i++) {
         answerList.children[i].classList.add('disabled');
         stopTimer();
+        if (soundOn) {
+            soundTimer.pause();
+        }
     }
 
     nextButton.classList.add('active');
@@ -281,7 +285,7 @@ function startTimer() {
         document.getElementById('timer').textContent = timeLeft;
 
         // Play sound when 15 seconds are left only if sound is enabled
-        if (timeLeft === 15 && !timerSound) {
+        if (timeLeft === 15 && !timerSound && soundOn) {
             if (soundOn) {
                 soundTimer.play();
             } // Play sound if user toggle the button ON
