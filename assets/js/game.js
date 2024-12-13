@@ -4,6 +4,7 @@ const exitButton = document.getElementById('exit-btn');
 const main = document.getElementById('main');
 const continueButton = document.getElementById('continue-btn');
 const quizBox = document.getElementById('quiz-box');
+const soundToggle = document.getElementById('sound-toggle');
 const nextButton = document.querySelector('.next-btn');
 const restartButton = document.getElementById('restart-button');
 const answerList = document.querySelector(`.answers-list`);
@@ -16,6 +17,11 @@ let userScore = 0;
 let countdown; 
 let timeLeft = 30;
 let timerSound = false;
+let soundOn = false;
+let backgroundMusic = new Audio('assets/sound/music.mp3');
+let soundCorrect = new Audio('assets/sound/correct-answer.mp3');
+let soundWrong = new Audio('assets/sound/wrong-answer.mp3');
+let soundTimer = new Audio('assets/sound/timer-sound-15sec.mp3');
 
 startButton.onclick = () => {
     window.addEventListener("username", (event)=> {
@@ -200,14 +206,16 @@ function answerSelected(answer, index) {
     // Check if the selected answer is correct
     if (userAnswer === correctAnswer) {
         answer.classList.add('correct');
-        let sound = new Audio('assets/sound/correct-answer.mp3');
-        sound.play();
+        if (soundOn) {
+            soundCorrect.play();
+        }
         userScore += 1;
         countScore();
     } else {
         answer.classList.add('incorrect');
-        let sound = new Audio('assets/sound/wrong-answer.mp3');
-        sound.play();
+        if (soundOn) {
+            soundWrong.play();
+        }
         // Highlight the correct answer
         const answerButtons = document.querySelectorAll('.answer-button');
         answerButtons.forEach(button => {
@@ -260,8 +268,9 @@ function startTimer() {
 
         // Play sound when 15 seconds are left
         if (timeLeft === 15 && !timerSound) {
-            let sound = new Audio('assets/sound/timer-sound-15sec.mp3');
-            sound.play();
+            if (soundOn) {
+                soundTimer.play();
+            }
             timerSound = true;
         }
 
@@ -283,4 +292,45 @@ function handleTimeUp() {
     alert("Time's up! Moving to the next question.");
     // Automatically trigger the "Next" button click to change the question with the next question
     nextButton.onclick();
+}
+
+backgroundMusic.loop = true; // music loops continuously
+
+soundToggle.addEventListener('change', () => {
+    soundOn = soundToggle.checked;
+    if (soundOn) {
+        backgroundMusic.play(); // Start background music
+    } else {
+        backgroundMusic.pause(); // Pause background music
+        backgroundMusic.currentTime = 0; // Reset background music
+
+        soundTimer.pause();
+        soundTimer.currentTime = 0;
+
+        soundCorrect.pause();
+        soundCorrect.currentTime = 0;
+
+        soundWrong.pause();
+        soundWrong.currentTime = 0
+    }
+});
+
+//Play sound  if sound is on
+function playSound(sound) {
+    if (soundOn) {
+        sound.currentTime = 0;
+        sound.play();
+    }
+}
+
+function playTimerSound() {
+    playSound(soundTimer); // Play timer sound if sound is on
+}
+
+function playCorrectSound() {
+    playSound(soundCorrect); // Play correct answer sound if sound is on
+}
+
+function playWrongSound() {
+    playSound(soundWrong); // Play wrong answer sound if sound is on
 }
