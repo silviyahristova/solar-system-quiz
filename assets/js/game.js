@@ -1,3 +1,4 @@
+const nameInput = document.getElementById('name-input');
 const startButton = document.querySelector(".start-btn");
 const rulesBox = document.querySelector(".rules-box");
 const exitButton = document.getElementById('exit-btn');
@@ -12,7 +13,7 @@ const answerList = document.querySelector(`.answers-list`);
 let questionCount = 0;
 let maxQuestions = 10;
 let questionNumb = 1;
-let username = document.getElementById("name-input");
+let username = "";
 let userScore = 0;
 let countdown; 
 let timeLeft = 30;
@@ -26,24 +27,24 @@ let soundTimer = new Audio('assets/sound/timer-sound-15sec.mp3');
 //Start button to start the quiz
 // Cannot continue without entering the name
 startButton.onclick = () => {
-    window.addEventListener("username", (event)=> {
-        event.preventDefault();
-        scrollToTop();
+    // Scroll to the top when the button is clicked
+    window.scrollTo({
+        top: 0,
+        behavior: 'smooth',
+    });
 
-        function scrollToTop() {
-            window.scrollTo({
-                top: 0,
-                behavior: 'smooth'
-            });
-        }
-    })
     // user name
-    if (username.value === "") {
+    const enteredName = nameInput.value.trim();
+    if (enteredName === "") {
         alert(`Please enter your name to play!`);
+    } else if (enteredName.length < 3) {
+        alert("Name must be at least 3 characters long!");
     } else {
-        rulesBox.classList.add('active');
-        main.classList.add('active'); ;
-    };
+        // If the username is valid
+        rulesBox.classList.add('active'); // Show the rules box
+        main.classList.add('active'); 
+        console.log(`Welcome, ${enteredName}!`); // Log the username
+    }
 };
 
 //Exit button 
@@ -147,7 +148,7 @@ const footerHTML = `
 
 const footerDiv = document.querySelectorAll('.boxes-logo');
 
-footerDiv.forEach(div => {
+divs.forEach(div => {
   const tempDiv = document.createElement('div');
   tempDiv.innerHTML = footerHTML; 
   const footerElement = tempDiv.firstElementChild; 
