@@ -9,7 +9,9 @@ const soundToggle = document.getElementById('sound-toggle');
 const nextButton = document.querySelector('.next-btn');
 const restartButton = document.getElementById('restart-button');
 const answerList = document.querySelector(`.answers-list`);
+const resultBox = document.getElementById('result-box');
 
+let quizOn= true;
 let questionCount = 0;
 let maxQuestions = 10;
 let questionNumb = 1;
@@ -83,8 +85,8 @@ nextButton.onclick = () => {
     timerSound = false; // Reset the timer sound flag
 
     }else{
-        console.log('Questions Completed!');
         stopTimer(); // Stop the timer when the quiz ends
+        showResultBox (); // Show the result 
     }
 };
 
@@ -155,7 +157,7 @@ divs.forEach(div => {
   div.appendChild(footerElement);
 });
 
-//question and option function
+// Question and option function
 // Shuffle the questions array
 function shuffleArray(arr) {
     let currentIndex = arr.length, randomIndex, temporaryValue;
@@ -182,7 +184,7 @@ let currentQuestionIndex = 0;
 // Show question and answers
 function showQuestion(index) {
     if (index >= shuffledQuestions.length) {
-        alert("You have completed the quiz!");
+        handleLastQuestion();
         return;
     }
 
@@ -261,8 +263,16 @@ function nextQuestion() {
         showQuestion(currentQuestionIndex);
         startTimer();  
     } else {
-        alert('You have completed the quiz!');
+        showResultBox();
     }
+}
+
+// When last question is answered then timer and sound stopped, not playing when result page is on
+function handleLastQuestion() {
+    quizOn = false; // Set to false to stop sounds from playing
+    stopTimer(); // Stop the timer and reset sound
+    resetAllSounds(); // Reset all sounds
+    showResultBox(); // Show result 
 }
 
 //Count the question 
@@ -282,11 +292,15 @@ function startTimer() {
     document.getElementById('timer').textContent = timeLeft;
 
     countdown = setInterval(() => {
+        if (!quizOn) { // If the quiz is not in progress, stop the timer and sounds
+            clearInterval(countdown);
+            return;
+        }
         timeLeft--;
         document.getElementById('timer').textContent = timeLeft;
 
         // Play sound when 15 seconds are left only if sound is enabled
-        if (timeLeft === 15 && !timerSound && soundOn) {
+        if (timeLeft === 15 && !timerSound && soundOn && quizOn) {
             if (soundOn) {
                 soundTimer.play();
             } // Play sound if user toggle the button ON
@@ -304,10 +318,19 @@ function startTimer() {
 // Stop the countdown timer
 function stopTimer() {
     clearInterval(countdown);
+    timerSound = false; // Reset the timer sound flag
+    soundTimer.pause(); // Pause the timer sound
+    soundTimer.currentTime = 0; // Reset the timer sound
 }
 
 // Handle time-up function
+// Not showing alert message when result page is open
 function handleTimeUp() {
+    // Check if the quiz is already over
+    if (questionCount >= shuffledQuestions.length) {
+        timerSound = false;
+        return; // Exit the function if quiz is completed
+    }
     alert("Time's up! Moving to the next question.");
     // Automatically trigger the "Next" button click to change the question with the next question
     nextButton.onclick();
@@ -323,19 +346,26 @@ soundToggle.addEventListener('change', () => {
     if (soundOn) {
         backgroundMusic.play(); // Start background music
     } else {
-        backgroundMusic.pause(); // Pause background music
-        backgroundMusic.currentTime = 0; // Reset background music
-
-        soundTimer.pause(); // Pause sound
-        soundTimer.currentTime = 0; // Reset sound
-
-        soundCorrect.pause(); // Pause sound
-        soundCorrect.currentTime = 0; // Reset sound
-
-        soundWrong.pause(); // Pause sound
-        soundWrong.currentTime = 0 // Reset sound
+        resetAllSounds();
     }
 });
+
+// Reset all sounds
+function resetAllSounds() {
+    // Stop and reset background music
+    backgroundMusic.pause();
+    backgroundMusic.currentTime = 0;
+
+    // Stop and reset other sounds
+    soundTimer.pause();
+    soundTimer.currentTime = 0;
+
+    soundCorrect.pause();
+    soundCorrect.currentTime = 0;
+
+    soundWrong.pause();
+    soundWrong.currentTime = 0;
+}
 
 //Play sound  if sound is on
 function playSound(sound) {
@@ -355,4 +385,12 @@ function playCorrectSound() {
 
 function playWrongSound() {
     playSound(soundWrong); // Play wrong answer sound if sound is on
+}
+
+//Result 
+function showResultBox() {
+    stopTimer(); // Stop timer
+    resetAllSounds(); // Reset all sounds
+    quizBox.classList.remove('active');
+    resultBox.classList.add('active')
 }
