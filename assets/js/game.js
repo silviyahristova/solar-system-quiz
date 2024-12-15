@@ -426,4 +426,43 @@ function showResultBox() {
         }
     },speed);
 
+    searchVideo();
+
+}
+
+// Youtube API
+// Information on how to use the JavaScript Fetch API to get data https://www.digitalocean.com/community/tutorials/how-to-use-the-javascript-fetch-api-to-get-data
+// Google developer console used to get the API key
+// Video is not autoplaying, could not mute the video
+const apiKey = 'AIzaSyCoztWOJcFX5S2wA6JywXVJGzqeDJTBP28';  // Youtube API key
+const videoId = 'w36yxLgwUOc';  // YouTube video ID
+const query = 'Solar system interestin facts';
+
+function searchVideo() {
+    const url = `https://www.googleapis.com/youtube/v3/search?part=snippet&q=${query}&type=video&key=${apiKey}`;
+            
+    fetch(url)
+        .then(response => response.json())
+        .then(data => {
+            const videoId = data.items[0].id.videoId;  // Get the first video ID
+            embedYouTubeVideo(videoId);  // Call function to embed video
+        })
+        .catch(error => console.error('Error fetching video:', error));
+    }
+
+// Function to embed the YouTube video
+function embedYouTubeVideo(videoId) {
+    const videoContainer = document.getElementById('video-info');
+    const iframe = document.createElement('iframe');
+    
+    iframe.title = "Solar system facts";
+    iframe.width = "300";
+    iframe.height = "195";
+    iframe.src = `https://www.youtube.com/embed/${videoId}??autoplay=1&muted=1`;
+    iframe.allow = "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture";
+    iframe.referrerpolicy="strict-origin-when-cross-origin";
+    iframe.allowFullscreen = true;
+    iframe.setAttribute('autoplay', '1');
+    iframe.setAttribute('muted', '1'); 
+    videoContainer.appendChild(iframe);
 }
