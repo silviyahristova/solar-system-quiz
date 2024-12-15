@@ -115,7 +115,7 @@ const myQuestions = [
     },
     { 
         questionNumber: 20,
-        questionText: "Which is the fastest planet to orbt the Sun?" ,
+        questionText: "Which is the fastest planet to orbit the Sun?" ,
         options : ["Earth","Neptune","Mars", "Mercury", ],
         correctAnswer: 3
     },
