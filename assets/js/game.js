@@ -284,7 +284,7 @@ function questionCounter (index) {
 //Count the scores
 function countScore() {
     const countScoreText = document.querySelector('.score-box');
-    countScoreText.textContent = `${userScore}`;
+    countScoreText.textContent = `${userScore}/10`;
 }
 
 //Timer
@@ -331,9 +331,16 @@ function handleTimeUp() {
         timerSound = false;
         return; // Exit the function if quiz is completed
     }
-    alert("Time's up! Moving to the next question.");
-    // Automatically trigger the "Next" button click to change the question with the next question
-    nextButton.onclick();
+
+    // If time is running out on the last question, show the results and let the user knows that it was the last question
+    if (questionCount >= maxQuestions - 1) {
+        alert("This was your last question! Look at the results!");
+        showResultBox(); // Automatically show  result when time's up on the last question
+    }else{
+        alert("Time's up! Moving to the next question.");
+        // Automatically trigger the "Next" button click to change the question with the next question
+        nextButton.onclick();
+    }
 }
 
 // Sound toggle;
@@ -392,5 +399,5 @@ function showResultBox() {
     stopTimer(); // Stop timer
     resetAllSounds(); // Reset all sounds
     quizBox.classList.remove('active');
-    resultBox.classList.add('active')
+    resultBox.classList.add('active');
 }
