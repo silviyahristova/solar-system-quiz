@@ -400,4 +400,30 @@ function showResultBox() {
     resetAllSounds(); // Reset all sounds
     quizBox.classList.remove('active');
     resultBox.classList.add('active');
+
+    const circleProgress = document.querySelector('.circle');
+    const percentageValue = document.querySelector('.percentage-value');
+    const winMessage = document.querySelector('.win-message');
+    const enteredName = nameInput.value.trim();
+    let progressStartValue = -1;
+    let progressEndValue = Math.round((userScore / shuffledQuestions.length) * 100);
+    let speed = 20; 
+
+    let progress = setInterval (() =>{
+        progressStartValue++;
+        percentageValue.textContent = `${progressStartValue}%`;
+        circleProgress.style.background = `conic-gradient(#9d8cd9 ${progressStartValue * 3.6}deg, #fedebe 0deg)`;
+        if (progressStartValue == progressEndValue) {
+            clearInterval(progress);
+
+            if (progressEndValue === 100) {
+                winMessage.innerHTML = `Well done, ${enteredName}!<br>You are a true space explorer!`;
+            } else if (progressEndValue >= 50) {
+                winMessage.innerHTML = `Great job ${enteredName}!<br>You scored really high!`;
+            } else {
+                winMessage.innerHTML = `Good effort ${enteredName}!<br>Keep practicing to improve.`;
+            }
+        }
+    },speed);
+
 }

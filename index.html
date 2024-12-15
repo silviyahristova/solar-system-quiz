@@ -87,16 +87,14 @@
 
         <!-- Name input and Start game -->
         <div id="name" class="like-btn">
-          <form method="POST" class="text-centre" id="name-form">
-            <input
-              class="text-centre"
-              id="name-input"
-              type="text"
-              placeholder="Enter your name"
-              aria-label="Enter your name"
-              minlength="3"
-              maxlength="15" />
-          </form>
+          <input
+            class="text-centre"
+            id="name-input"
+            type="text"
+            placeholder="Enter your name"
+            aria-label="Enter your name"
+            minlength="3"
+            maxlength="15" />
           <button class="color start-btn text-centre" id="start-button">
             Start Quiz
           </button>
@@ -193,7 +191,8 @@
             role="progressbar"
             aria-valuenow="1"
             aria-valuemin="1"
-            aria-valuemax="10"></div>
+            aria-valuemax="10"
+            aria-label="Progress in quiz"></div>
         </div>
         <div class="timer right-side" id="timer-box">
           Time: <span id="timer">60</span> seconds
@@ -227,23 +226,23 @@
     </div>
 
     <!--Result section-->
-    <div class="result-box text-centre box-logo" id="result-box">
-      <header class="heading-font">Result</header>
+    <div class="result-box box-logo" id="result-box">
+      <header class="heading-font white text-centre">Result</header>
 
-      <section>
-        <div class="percentage">
+      <section class="text-centre">
+        <div class="percentage text-centre">
           <div class="circle">
-            <span class="percentage-value">0%</span>
+            <span class="percentage-value"></span>
           </div>
         </div>
-        <div class="win-message">
-          Well done, Silviya!Your are a true space explorer!
+        <div class="win-message white">
+          Well done, <span id="username"></span>! You are a true space explorer!
         </div>
         <div>API youtube</div>
       </section>
 
-      <footer>
-        <span>Want to have another go at the quiz?</span>
+      <footer class="text-centre">
+        <span class="white">Want to have another go at the quiz?</span>
         <div><button class="start-btn">Start Again</button></div>
       </footer>
     </div>
