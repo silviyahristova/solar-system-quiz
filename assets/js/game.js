@@ -10,6 +10,7 @@ const nextButton = document.querySelector('.next-btn');
 const restartButton = document.getElementById('restart-button');
 const answerList = document.querySelector(`.answers-list`);
 const resultBox = document.getElementById('result-box');
+const startAgainButton = document.querySelector('.start-again');
 
 let quizOn= true;
 let questionCount = 0;
@@ -95,6 +96,39 @@ nextButton.onclick = () => {
 restartButton.addEventListener('click', function () {
     window.location.reload();
 });
+
+// Start again button
+startAgainButton.onclick = () => {
+    quizBox.classList.add('active');
+    nextButton.classList.remove('active');
+    resultBox.classList.remove('active');
+
+    questionCount = 0;
+    questionNumb = 1;
+    userScore = 0;
+    showQuestion(questionCount);
+    questionCounter(questionNumb);
+
+    countScore()
+    resetAllSounds()
+    // Stop the previous timer and reset
+    clearInterval(countdown); // Stop the previous timer
+    timeLeft = 30; // Reset time to your desired starting time (e.g., 30 seconds)
+    document.getElementById('timer').textContent = timeLeft;
+
+    startTimer(); // Start the new timer
+    timerSound = false; // Reset the timer sound flag
+
+    if (soundOn) {
+        backgroundMusic.play(); // Play the sound if it's on
+    } else {
+        backgroundMusic.pause(); // Pause the sound if it's off
+    }
+    
+    embedYouTubeVideo(videoId);
+
+    quizOn = true;
+}
 
 //Keep logo in all main divs
 const headerHTML = `
@@ -434,7 +468,8 @@ function showResultBox() {
 // Information on how to use the JavaScript Fetch API to get data https://www.digitalocean.com/community/tutorials/how-to-use-the-javascript-fetch-api-to-get-data
 // Google developer console used to get the API key
 // Video is not autoplaying, could not mute the video
-const apiKey = 'AIzaSyCoztWOJcFX5S2wA6JywXVJGzqeDJTBP28';  // Youtube API key
+// API KEY is restricted to be used only for this web applicatin and only for youtube. This make it secure and not exposed to leaking 
+const apiKey = 'AIzaSyBokzxpJV7ZQp9THNMqdqyr71gW8-9jxwQ';  // Youtube API key
 const videoId = 'w36yxLgwUOc';  // YouTube video ID
 const query = 'Solar system interestin facts';
 
@@ -453,12 +488,16 @@ function searchVideo() {
 // Function to embed the YouTube video
 function embedYouTubeVideo(videoId) {
     const videoContainer = document.getElementById('video-info');
+
+    // Clear any previously embedded video
+    // When playing secong quiz after pressing the button Start again , prevent multiple videos stacking up in the DOM.
+    videoContainer.innerHTML = ''; 
     const iframe = document.createElement('iframe');
     
     iframe.title = "Solar system facts";
     iframe.width = "300";
     iframe.height = "195";
-    iframe.src = `https://www.youtube.com/embed/${videoId}??autoplay=1&muted=1`;
+    iframe.src = `https://www.youtube.com/embed/${videoId}?autoplay=1&muted=1`;
     iframe.allow = "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture";
     iframe.referrerpolicy="strict-origin-when-cross-origin";
     iframe.allowFullscreen = true;
