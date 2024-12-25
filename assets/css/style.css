@@ -379,8 +379,10 @@ form {
 
 /*----------------------------------------------------------------Result section*/
 .result-box {
-  background: url(../../assets/images/homepage/result-image.webp) center
-    no-repeat fixed;
+  background-image: url(../../assets/images/homepage/result-image.webp);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
   position: absolute;
   top: 50%;
   left: 50%;
