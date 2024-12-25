@@ -121,7 +121,7 @@ const myQuestions = [
     },
     { 
         questionNumber: 21,
-        questionText: "Which planets do not have moons, that otbit them?" ,
+        questionText: "Which planets do not have moons, that orbit them?" ,
         options : ["Mercury and Earth","Venus and Mercury","Neptune and Venus", "Uranus and Saturn", ],
         correctAnswer: 1
     },
