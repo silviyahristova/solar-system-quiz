@@ -106,11 +106,12 @@ startAgainButton.onclick = () => {
     questionCount = 0;
     questionNumb = 1;
     userScore = 0;
+
+    shuffledQuestions = shuffleArray([...myQuestions]).slice(0, 10);
+
     showQuestion(questionCount);
     questionCounter(questionNumb);
 
-    countScore()
-    resetAllSounds()
     // Stop the previous timer and reset
     clearInterval(countdown); // Stop the previous timer
     timeLeft = 30; // Reset time to your desired starting time (e.g., 30 seconds)
@@ -124,8 +125,6 @@ startAgainButton.onclick = () => {
     } else {
         backgroundMusic.pause(); // Pause the sound if it's off
     }
-    
-    embedYouTubeVideo(videoId);
 
     quizOn = true;
 }
@@ -460,8 +459,7 @@ function showResultBox() {
         }
     },speed);
 
-    searchVideo();
-
+    embedYouTubeVideo(videoId);
 }
 
 // Youtube API
@@ -498,7 +496,7 @@ function embedYouTubeVideo(videoId) {
     iframe.width = "300";
     iframe.height = "195";
     iframe.src = `https://www.youtube.com/embed/${videoId}?autoplay=1&muted=1`;
-    iframe.allow = "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture";
+    iframe.allow = "accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture";
     iframe.referrerpolicy="strict-origin-when-cross-origin";
     iframe.allowFullscreen = true;
     iframe.setAttribute('autoplay', '1');
