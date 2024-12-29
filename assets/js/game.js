@@ -126,6 +126,12 @@ startAgainButton.onclick = () => {
         backgroundMusic.pause(); // Pause the sound if it's off
     }
 
+    // Mute the video if already playing
+    const iframe = document.querySelector('#video-info iframe');
+    if (iframe) {
+        iframe.src += "&mute=1";
+    }
+
     quizOn = true;
 }
 
