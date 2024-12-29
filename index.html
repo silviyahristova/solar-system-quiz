@@ -143,24 +143,26 @@
       <header class="heading-font text-centre">How to play</header>
       <section class="rules-list text-centre">
         <div class="info-list text-under-heading">
-          1. Answer the question by selecting one of the 4 answer choices.
+          1. Answer all 10 questions to complete the quiz.
         </div>
         <div class="info-list text-under-heading">
-          2. The answer appears after clicking on one of the choices.
+          2. You earn 1 point for every correct answer.
         </div>
         <div class="info-list text-under-heading">
-          3. If the answer is correct you will earn 1 point. If wrong - 0
-          points.
+          3. If you want to activate or deactivate sounds during the game, use
+          the <strong>Sound ON/OFF</strong> button at the top of the screen.
         </div>
         <div class="info-list text-under-heading">
-          4. Scores are shown at the top of the screen.
+          4. Keep an eye on the timer! If time runs out, you will automatically
+          move to the next question.
         </div>
         <div class="info-list text-under-heading">
-          5. A complete game consists of 10 questions.
+          5. Your score will be displayed at the end of the quiz.
         </div>
         <div class="info-list text-under-heading">
           6. Click "Start Again" to start a new game.
         </div>
+        <div class="text-centre message-to-user">Good Luck!</div>
       </section>
       <footer class="text-centre">
         <div class="btn-group">
@@ -184,15 +186,9 @@
       </header>
 
       <section class="box">
-        <div class="progressbar">
+        <div class="settings">
           <span class="count-question" id="question-count"></span>
-          <div
-            class="progress"
-            role="progressbar"
-            aria-valuenow="1"
-            aria-valuemin="1"
-            aria-valuemax="10"
-            aria-label="Progress in quiz"></div>
+          <div class="line"></div>
         </div>
         <div class="timer right-side" id="timer-box">
           Time: <span id="timer">60</span> seconds
