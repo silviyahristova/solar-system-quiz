@@ -28,9 +28,11 @@ form.addEventListener('submit', (e) => {
       messageInput.value = '',
       subjectInput.value = '',
       console.log('Success');
+      alert('Your email has been sent successfully!');
     }, 
     (error) => {
-      console.log(Error);
+      console.error('Error occurred:', error);
+      window.location.href = '/workspace/solar-system-quiz/404.html';
     }
   );
 });
