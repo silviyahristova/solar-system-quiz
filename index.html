@@ -60,23 +60,9 @@
   </head>
 
   <body>
-    <main id="main">
-      <header id="logo">
-        <div class="row">
-          <div class="col-6">
-            <a class="logo" href="index.html">
-              <img
-                src="assets/images/homepage/logo.webp"
-                alt="The planet Earth"
-                id="logoimage"
-                srcset="assets/images/homepage/logo.webp" />
-            </a>
-          </div>
-        </div>
-      </header>
-
+    <main id="main">      
       <!-- Home page -->
-      <div class="container-fluid p-0" id="home-box">
+      <div class="container-fluid p-0 box-logo box-footer" id="home-box">
         <h1 class="heading-font text-centre">The Solar system</h1>
         <h2 class="text-centre">Quiz game</h2>
         <p class="text-under-heading text-centre">
@@ -112,138 +98,114 @@
             <a class="link" href="contact.html">Contact us</a>
           </div>
         </section>
-
-        <!--Footer-->
-        <footer class="container-fluid p-0" id="footer">
-          <div class="logo-link">
-            <a
-              class="social-media-link"
-              href="https://github.com/silviyahristova"
-              aria-label="GitHub"
-              target="_blank"
-              ><i class="fa-brands fa-github"></i>
-            </a>
-            <a
-              class="social-media-link"
-              href="https://www.linkedin.com/in/silviyahristova93/"
-              aria-label="LinkedIn"
-              target="_blank"
-              ><i class="fa-brands fa-linkedin-in"></i>
-            </a>
-          </div>
-          <div class="text-centre">
-            <span>Made by Silviya Hristova</span>
-          </div>
-        </footer>
       </div>
-    </main>
 
-    <!--How to play section-->
-    <div class="rules-box box-logo" id="rules-box">
-      <header class="heading-font text-centre">How to play</header>
-      <section class="rules-list text-centre">
-        <div class="info-list text-under-heading">
-          1. Answer all 10 questions to complete the quiz.
-        </div>
-        <div class="info-list text-under-heading">
-          2. You earn 1 point for every correct answer.
-        </div>
-        <div class="info-list text-under-heading">
-          3. If you want to activate or deactivate sounds during the game, use
-          the <strong>Sound ON/OFF</strong> button at the top of the screen.
-        </div>
-        <div class="info-list text-under-heading">
-          4. Keep an eye on the timer! If time runs out, you will automatically
-          move to the next question.
-        </div>
-        <div class="info-list text-under-heading">
-          5. Your score will be displayed at the end of the quiz.
-        </div>
-        <div class="info-list text-under-heading">
-          6. Click "Start Again" to start a new game.
-        </div>
-        <div class="text-centre message-to-user">Good Luck!</div>
-      </section>
-      <footer class="text-centre">
-        <div class="btn-group">
-          <button class="color info-btn" id="exit-btn">Exit Quiz</button>
-          <a href="#" id="continue-btn" class="color info-btn">Continue</a>
-        </div>
-      </footer>
-    </div>
-
-    <!--Quiz section-->
-    <div class="quiz-box box-logo" id="quiz-box">
-      <header class="right-side" id="scores">
-        <div class="score" id="score">
-          Scores: <span class="score-box">0</span>
-        </div>
-        <div class="sound">
-          <span
-            >Sound:<input type="checkbox" id="sound-toggle" onclick=""
-          /></span>
-        </div>
-      </header>
-
-      <section class="box">
-        <div class="settings">
-          <span class="count-question" id="question-count"></span>
-          <div class="line"></div>
-        </div>
-        <div class="timer right-side" id="timer-box">
-          Time: <span id="timer">60</span> seconds
-        </div>
-      </section>
-
-      <section class="text-centre">
-        <div class="question-text" id="question-text">Question</div>
-        <div class="answers-list" id="answers-box">
-          <div class="answer-button" onclick="answerSelected(this)">
-            <span>Option 1</span>
+      <!--How to play section-->
+      <div class="rules-box box-logo box-footer" id="rules-box">
+        <h1 class="heading-font text-centre">How to play</h1>
+        <section class="rules-list text-centre">
+          <div class="info-list text-under-heading">
+            <p>1. Answer all 10 questions to complete the quiz.</p>
           </div>
-          <div class="answer-button" onclick="answerSelected(this)">
-            <span>Option 2</span>
+          <div class="info-list text-under-heading">
+            <p>2. You earn 1 point for every correct answer.</p>
           </div>
-          <div class="answer-button" onclick="answerSelected(this)">
-            <span>Option 3</span>
+          <div class="info-list text-under-heading">
+            <p>3. If you want to activate or deactivate sounds during the game, use
+            the <strong>Sound ON/OFF</strong> button at the top of the screen.</p>
           </div>
-          <div class="answer-button" onclick="answerSelected(this)">
-            <span>Option 4</span>
+          <div class="info-list text-under-heading">
+            <p>4. Keep an eye on the timer! If time runs out, you will
+            automatically move to the next question.</p>
           </div>
-        </div>
-      </section>
-
-      <footer class="text-centre">
-        <div class="btn-group">
-          <button class="color info-btn" id="restart-button">Restart</button>
-          <button class="color info-btn next-btn" id="next-button">Next</button>
-        </div>
-      </footer>
-    </div>
-
-    <!--Result section-->
-    <div class="result-box box-logo" id="result-box">
-      <header class="heading-font white text-centre">Result</header>
-
-      <section class="text-centre">
-        <div class="percentage text-centre">
-          <div class="circle">
-            <span class="percentage-value"></span>
+          <div class="info-list text-under-heading">
+            <p>5. Your score will be displayed at the end of the quiz.</p>
           </div>
-        </div>
-        <div class="win-message white">
-          Well done, <span id="username"></span>! You are a true space explorer!
-        </div>
-        <div id="video-info"></div>
-      </section>
+          <div class="info-list text-under-heading">
+            <p>6. Click "Start Again" to start a new game.</p>
+          </div>
+          <div class="text-centre message-to-user">Good Luck!</div>
+          <div class="btn-group">
+            <button class="color info-btn" id="exit-btn">Exit Quiz</button>
+            <a href="#" id="continue-btn" class="color info-btn">Continue</a>
+          </div>
+        </section>
+      </div>
 
-      <footer class="text-centre">
-        <span class="white">Want to have another go at the quiz?</span>
-        <div><button class="start-btn start-again">Start Again</button></div>
-      </footer>
-    </div>
+      <!--Quiz section-->
+      <div class="quiz-box box-logo box-footer" id="quiz-box">
+        <header class="right-side" id="scores">
+          <div class="score" id="score">
+            Scores: <span class="score-box">0</span>
+          </div>
+          <div class="sound">
+            <span
+              >Sound:<input type="checkbox" id="sound-toggle" onclick=""
+            /></span>
+          </div>
+        </header>
+
+        <section class="box">
+          <div class="settings">
+            <span class="count-question" id="question-count"></span>
+            <div class="line"></div>
+          </div>
+          <div class="timer right-side" id="timer-box">
+            Time: <span id="timer">60</span> seconds
+          </div>
+        </section>
+
+        <section class="text-centre">
+          <div class="question-text" id="question-text">Question</div>
+          <div class="answers-list" id="answers-box">
+            <div class="answer-button" onclick="answerSelected(this)">
+              <span>Option 1</span>
+            </div>
+            <div class="answer-button" onclick="answerSelected(this)">
+              <span>Option 2</span>
+            </div>
+            <div class="answer-button" onclick="answerSelected(this)">
+              <span>Option 3</span>
+            </div>
+            <div class="answer-button" onclick="answerSelected(this)">
+              <span>Option 4</span>
+            </div>
+          </div>
+          <div class="btn-group">
+            <button class="color info-btn" id="restart-button">Restart</button>
+            <button class="color info-btn next-btn" id="next-button">
+              Next
+            </button>
+          </div>
+        </section>
+      </div>
+
+      <!--Result section-->
+      <div class="result-box box-logo box-footer" id="result-box">
+        <h1 class="heading-font white text-centre">Result</h1>
+
+        <section class="text-centre">
+          <div class="percentage text-centre">
+            <div class="circle">
+              <span class="percentage-value"></span>
+            </div>
+          </div>
+          <div class="win-message white">
+            Well done, <span id="username"></span>! You are a true space
+            explorer!
+          </div>
+          <div id="video-info"></div>
+        </section>
+
+        <footer class="text-centre">
+          <span class="white">Want to have another go at the quiz?</span>
+          <div><button class="start-btn start-again">Start Again</button></div>
+        <footer>
+      </div>
+    </main>    
 
     <script src="https://www.googleapis.com/youtube/v3/"></script>
+    <script src="assets/js/logo-footer.js"></script>
     <script type="text/javascript" src="assets/js/questions-array.js"></script>
     <script type="text/javascript" src="assets/js/game.js"></script>
   </body>
