@@ -70,113 +70,79 @@
 
     <title>Contact us</title>
   </head>
-  <body
-    style="
-      background-image: url(../assets/images/contactpage/contact-page.webp);
-    ">
-    <header>
-      <div class="container-fluid p-0">
-        <div class="row">
-          <div class="col-6">
-            <a class="logo" href="index.html">
-              <img
-                src="assets/images/homepage/logo.webp"
-                alt="The planet Earth"
-                id="logoimage"
-                srcset="assets/images/homepage/logo.webp" />
-            </a>
+
+  <body>
+    <main>
+      <section
+        class="container-fluid p-0 box-logo box-footer"
+        id="contact-body">
+        <div class="text-centre">
+          <h1 class="heading-font">Contact us</h1>
+          <p class="text-under-heading">
+            Having problems or happy with the game feel free to contact us.
+          </p>
+        </div>
+
+        <!--contact form -->
+        <form id="contact-form">
+          <div class="form-group">
+            <input
+              type="text"
+              id="user-name"
+              name="name"
+              placeholder="Name"
+              aria-label="Enter your name"
+              autocomplete="on"
+              required />
+          </div>
+          <div class="form-group">
+            <input
+              type="email"
+              id="user-email"
+              name="email"
+              placeholder="Email address"
+              aria-label="Enter your email"
+              autocomplete="on"
+              required />
+          </div>
+          <div class="form-group">
+            <input
+              type="text"
+              id="subject"
+              name="subject"
+              placeholder="Subject"
+              aria-label="Enter subject"
+              required />
+          </div>
+          <div class="form-group">
+            <textarea
+              id="message"
+              name="message"
+              rows="4"
+              placeholder="Message"
+              aria-label="Enter your message"
+              required></textarea>
+          </div>
+          <button
+            class="text-centre color start-btn"
+            type="submit"
+            id="send-btn">
+            Send
+          </button>
+        </form>
+
+        <div class="container-fluid">
+          <p class="text-under-heading text-centre">
+            Want to test your solar system knowledge?!
+          </p>
+          <div class="like-btn">
+              <a class="link" href="index.html">Start Quiz</a>
           </div>
         </div>
-      </div>
-    </header>
-
-    <section class="container-fluid p-0">
-      <div class="text-centre">
-        <h1 class="heading-font">Contact us</h1>
-        <p class="text-under-heading">
-          Having problems or happy with the game feel free to contact us.
-        </p>
-      </div>
-
-      <!--contact form -->
-      <form id="contact-form">
-        <div class="form-group">
-          <input
-            type="text"
-            id="user-name"
-            name="name"
-            placeholder="Name"
-            aria-label="Enter your name"
-            autocomplete="on"
-            required />
-        </div>
-        <div class="form-group">
-          <input
-            type="email"
-            id="user-email"
-            name="email"
-            placeholder="Email address"
-            aria-label="Enter your email"
-            autocomplete="on"
-            required />
-        </div>
-        <div class="form-group">
-          <input
-            type="text"
-            id="subject"
-            name="subject"
-            placeholder="Subject"
-            aria-label="Enter subject"
-            required />
-        </div>
-        <div class="form-group">
-          <textarea
-            id="message"
-            name="message"
-            rows="4"
-            placeholder="Message"
-            aria-label="Enter your message"
-            required></textarea>
-        </div>
-        <button class="text-centre color start-btn" type="submit" id="send-btn">
-          Send
-        </button>
-      </form>
-
-      <div class="container-fluid m-1">
-        <p class="text-under-heading text-centre">
-          Want to test your solar system knowledge?!
-        </p>
-        <div class="like-btn">
-          <button class="color start-btn text-centre" id="start-button-contact">
-            Start Quiz
-          </button>
-        </div>
-      </div>
-    </section>
-
-    <footer class="container-fluid p-0">
-      <div class="logo-link">
-        <a
-          class="social-media-link"
-          href="https://github.com/silviyahristova"
-          aria-label="GitHub"
-          target="_blank"
-          ><i class="fa-brands fa-github"></i
-        ></a>
-        <a
-          class="social-media-link"
-          href="https://www.linkedin.com/in/silviyahristova93/"
-          aria-label="LinkedIn"
-          target="_blank"
-          ><i class="fa-brands fa-linkedin-in"></i
-        ></a>
-      </div>
-      <div class="text-centre center">
-        <span>Made by Silviya Hristova</span>
-      </div>
-    </footer>
+      </section>
+    </main>
 
     <script type="text/javascript" src="assets/js/email.js"></script>
+    <script src="assets/js/logo-footer.js"></script>
   </body>
 </html>
