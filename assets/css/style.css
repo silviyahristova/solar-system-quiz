@@ -45,6 +45,7 @@ img {
   position: fixed;
   background: transparent;
   overflow: hidden;
+  margin-top: 10px;
 }
 
 #logoimage {
@@ -53,19 +54,19 @@ img {
 
 .heading-font {
   font-family: "Engagement", sans-serif;
-  font-size: 70px;
+  font-size: 65px;
   font-weight: 500;
   margin: 0;
   padding-bottom: 5px;
-  padding-top: 40px;
+  padding-top: 70px;
 }
 
 h2 {
   font-family: "Lora", sans-serif;
-  font-size: 30px;
+  font-size: 24px;
   font-style: italic;
   margin-bottom: 0;
-  padding-bottom: 46px;
+  padding-bottom: 35px;
 }
 
 p,
@@ -80,7 +81,7 @@ button {
 }
 
 .text-under-heading {
-  margin: 0px 15px 1px;
+  margin: 15px 30px;
 }
 
 a {
@@ -93,16 +94,20 @@ a {
   align-items: center;
 }
 
+#name {
+  margin-top: 55px;
+}
+
 #name-input {
   background-color: #cec5ec;
   border: 1px #000 solid;
   border-radius: 50px;
   padding: 10px 15px;
-  margin: 0 auto;
+  margin: 0 auto 10px;
 }
 
-form {
-  margin-top: 25px;
+.home-contact-box {
+  margin-top: 55px;
 }
 
 ::-webkit-input-placeholder {
@@ -116,7 +121,7 @@ form {
   background-color: #fedebe;
   border: 1px #000 solid;
   border-radius: 50px;
-  padding: 5px 30px;
+  padding: 5px 60px;
   margin: 0 auto;
 }
 
@@ -147,10 +152,27 @@ form {
   pointer-events: auto;
 }
 
+.rules-box .text-under-heading {
+  margin: 3px 20px;
+}
+
+.rules-box p {
+  margin-bottom: 0;
+}
+
+.rule-list{
+  margin: 20px 0;
+}
+
 .rules-box .btn-group {
   display: flex;
   justify-content: space-evenly;
   align-items: center;
+}
+
+.message-to-user {
+  font-weight: 600;
+  font-size: 18px;
 }
 
 .rules-box .btn-group .info-btn {
@@ -160,7 +182,7 @@ form {
   border: 1px #000 solid;
   border-radius: 50px;
   padding: 5px 30px;
-  margin-top: 70px;
+  margin-top: 50px;
   text-decoration: none;
   color: #000;
 }
@@ -180,6 +202,7 @@ form {
   background-color: #fb8610;
   transition: 5s;
 }
+
 /*----------------------------------------------------------------Quiz*/
 
 .quiz-box {
@@ -207,9 +230,14 @@ form {
   width: 100%;
 }
 
+.settings {
+  margin: 120px 20px 0px 20px;
+}
+
 .right-side {
   float: right;
   padding: 8px;
+  margin-top: 10px;
 }
 
 .score-box {
@@ -251,27 +279,20 @@ form {
   border: 1px solid #000;
 }
 
-.progressbar {
-  padding-top: 50px;
-  margin: 0 40px;
-}
-
-.count-question {
-  float: left;
-}
-
-.progress {
-  width: 100%;
+.line {
   height: 8px;
   border: 1px solid;
+  background-color: #fff;
+  border-radius: 50px;
 }
 
 .timer {
   margin-right: 35px;
+  float: right;
 }
 
 .question-text {
-  margin: 15px 25px 0px 25px;
+  margin: 75px 25px 0px 25px;
   background-color: #cec5ec;
   border-radius: 25px;
   font-weight: 700;
@@ -392,9 +413,6 @@ form {
   color: #000;
   opacity: 0;
   pointer-events: none;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
 }
 
 .result-box.active {
@@ -410,8 +428,8 @@ form {
 
 .circle {
   position: relative;
-  width: 180px;
-  height: 180px;
+  width: 150px;
+  height: 150px;
   border-radius: 50%;
   background: conic-gradient(#9d8cd9 3.6deg, #fedebe 0deg);
   display: flex;
@@ -426,13 +444,16 @@ form {
 
 .win-message {
   font-size: 20px;
-}
-.result-box #footer {
-  color: #fff;
+  margin: 15px 20px 0 20px;
 }
 
-.home-contact-box {
+#video-info {
   margin-top: 15px;
+}
+
+.result-box footer {
+  margin-top: 25px;
+  color: #fff;
 }
 
 /*----------------------------------------------------------------Contact page*/
@@ -449,15 +470,29 @@ form {
 form {
   display: flex;
   flex-direction: column;
-  margin: 0;
+  margin: 10px;
+
 }
 
 .form-group {
   display: flex;
   flex-direction: column;
   margin: 5px;
-  align-items: center;
 }
+
+#contact-form button {
+  border-radius: 10px;
+  justify-content: center;
+  display: flex;
+  align-items: center;
+  margin: auto;
+}
+
+#user-name, #user-email, #subject, #message {
+  padding: 5px ;
+  border-radius: 10px;
+}
+
 /*----------------------------------------------------------------Error 404 page*/
 #errorpage-body {
   background-image: url(../../assets/images/homepage/404image.webp);
@@ -483,6 +518,8 @@ form {
 #footer {
   position: fixed;
   bottom: 0;
+  width: 100%;
+  margin-top: auto;
 }
 
 #footer span {
@@ -520,10 +557,11 @@ i {
   flex-direction: column;
 }
 /*-----------------------------------------------------------Media Queries*/
+/*-----------------------------------------------------------Mobile device*/
 
 @media screen and (max-width: 320px) {
   #logoimage {
-    width: 50%;
+    width: 40%;
   }
 }
 
@@ -533,31 +571,241 @@ i {
   }
 }
 
-@media screen and (max-width: 575px) {
-  #logoimage {
-    width: 40%;
+@media screen and (min-width: 375px) {
+  .rules-list {
+    margin-top: 35px;
   }
 }
+
+@media screen and (min-width: 425px) {
+  #logoimage {
+    width: 35%;
+  }
+
+  #name {
+    margin-top: 55px;
+  }
+
+  .home-contact-box {
+    margin-top: 75px  
+  }
+
+  .rules-list {
+    margin-top: 55px 
+  }
+
+  .rules-box .btn-group .info-btn {
+    margin-top: 70px;
+  }
+
+  form {
+    margin: 35px;
+  }
+}
+
+@media screen and (min-width: 475px) {
+  #logoimage {
+    width: 30%;
+  }
+
+  .text-under-heading {
+    margin: 15px 70px;
+  }
+
+  form {
+    margin: 0 55px 55px;
+  }
+}
+
 @media screen and (min-width: 576px) {
   #logoimage {
     width: 25%;
   }
-}
 
-@media screen and (min-width: 768px) {
-  #logoimage {
-    width: 20%;
+  #name {
+    margin-top: 65px;
+  }
+
+  .heading-font {
+    font-size: 70px;
+  }
+
+  h2 {
+    font-size: 28px;
+  }
+
+  .text-under-heading {
+    font-size: 18px;
+    margin: 22px;
+  }
+
+  .rules-list p {
+    font-size: 18px;
+    margin: 7px;
+  }
+
+  .message-to-user {
+    font-size: 22px;
+    margin-top: 25px 
+  }
+
+  .box span {
+    font-size: 18px;
+  }
+
+  #score span {
+    font-size: 18px;
+  }
+
+  .answer-button {
+    padding: 13px;
+  }
+
+  span, #score{
+    font-size: 18px;
+  }
+
+  .quiz-box .btn-group .info-btn {
+    padding: 10px 50px
+  }
+  
+  .win-message {
+    margin: 20px 20px 0 20px;
+    font-size: 22px;
+  }
+
+  iframe {
+    width: 400px;
+    height: 250px;
+  }
+
+  .result-box footer {
+    margin-top: 5px;
   }
 }
 
-@media screen and (min-width: 992px) {
+/*-----------------------------------------------------------Tablet*/
+@media screen and (min-width: 768px) {
   #logoimage {
-    width: 15%;
+    width: 18%;
+  }
+
+  .heading-font {
+    font-size: 90px;
+  }
+
+  h2 {
+    font-size: 35px;
+  }
+
+  .text-under-heading {
+    font-size: 18px;
+  }
+
+  .settings {
+    margin: 120px 120px 0px 120px;
+  }
+
+  .timer {
+    margin-right: 120px;
+  }
+
+  .question-answer {
+    margin: 90px 90px 0;
+  }
+
+  .quiz-area {
+    margin: 0 90px;
+  }
+
+  .end-section {
+    margin-top: 15px;
+  }
+
+  form {
+    margin: 0 110px 55px;
+  }
+}
+
+/*-----------------------------------------------------------Desktop*/
+@media screen and (min-width: 992px) {
+
+  #logoimage {
+    width: 18%;
+  }
+
+  .text-under-heading {
+    font-size: 20px;
+  }
+
+  .rules-list p {
+    font-size: 20px;
+  }
+
+  .message-to-user {
+    font-size: 25px;
+  }
+
+  .box span {
+    font-size: 20px;
+  }
+
+  .settings {
+    margin: 110px 140px 0px 140px;
+  }
+
+  .timer {
+    margin-right: 140px;
+  }
+
+  .question-answer {
+    margin: 90px 90px 0;
+  }
+
+  .quiz-area {
+    margin: 0 110px;
+  }
+
+  form {
+    margin: 0 220px 55px;
+  }
+
+  #user-name, #user-email, #subject, #message {
+    margin: 7px;
+    padding: 10px;
   }
 }
 
 @media screen and (min-width: 1200px) {
   #logoimage {
-    width: 12%;
+    width: 20%;
+  }
+
+  .heading-font {
+    font-size: 90px;
+  }
+
+  .settings {
+    margin: 110px 380px 0px 380px;
+  }
+
+  .timer {
+    margin-right: 380px;
+  }
+
+  .question-answer {
+    margin: 90px 90px 0;
+  }
+
+  .answer-button {
+    margin: 10px;
+  }
+
+  .quiz-area {
+    margin: 0 350px;
+  }
+
+  form {
+    margin: 0 650px 55px;
   }
 }

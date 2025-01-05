@@ -27,7 +27,7 @@ divs.forEach(div => {
 
 // Keep footer in all main divs
 const footerHTML = `
-    <footer class="container-fluid p-0" id="footer">
+    <footer class="container-fluid" id="footer">
         <div class="logo-link">
             <a
                 class="social-media-link"
