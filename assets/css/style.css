@@ -3,7 +3,6 @@
   padding: 0;
   border: 0;
   box-sizing: border-box;
-  overflow: hidden;
 }
 
 body {
@@ -39,12 +38,13 @@ img {
   background-repeat: no-repeat;
   background-attachment: fixed;
   width: 100%;
-  height: 100vh;
+  height: 100svh;
 }
 
 #logo {
   position: fixed;
   background: transparent;
+  overflow: hidden;
 }
 
 #logoimage {
@@ -137,7 +137,7 @@ form {
   background-attachment: fixed;
   background-position: center;
   width: 100%;
-  height: 100vh;
+  height: 100svh;
   opacity: 0;
   pointer-events: none;
 }
@@ -188,7 +188,7 @@ form {
   left: 50%;
   transform: translate(-50%, -50%);
   width: 100%;
-  height: 100vh;
+  height: 100svh;
   background-image: url(../../assets/images/homepage/quiz-image.webp);
   background-size: cover;
   background-repeat: no-repeat;
@@ -388,7 +388,7 @@ form {
   left: 50%;
   transform: translate(-50%, -50%);
   width: 100%;
-  height: 100vh;
+  height: 100svh;
   color: #000;
   opacity: 0;
   pointer-events: none;
@@ -436,6 +436,16 @@ form {
 }
 
 /*----------------------------------------------------------------Contact page*/
+#contact-body {
+  background-image: url(../../assets/images/contactpage/contact-page.webp);
+  background-color: #9d8cd9;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  width: 100%;
+  height: 100svh;
+}
+
 form {
   display: flex;
   flex-direction: column;
@@ -447,6 +457,25 @@ form {
   flex-direction: column;
   margin: 5px;
   align-items: center;
+}
+/*----------------------------------------------------------------Error 404 page*/
+#errorpage-body {
+  background-image: url(../../assets/images/homepage/404image.webp);
+  background-color: #9d8cd9;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center;
+  width: 100%;
+  height: 100svh;
+}
+
+.center-page {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  width: 100%;
+  height: 100svh;
 }
 
 /*----------------------------------------------------------------Footer*/
@@ -474,6 +503,10 @@ form {
 .logo-link {
   display: flex;
   justify-content: center;
+}
+
+i {
+  overflow: hidden;
 }
 
 .social-media-link {
