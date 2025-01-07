@@ -26,14 +26,10 @@ img {
 }
 
 /*-----------------------------------------------------------Header*/
-#main.active {
-  opacity: 1;
-  pointer-events: auto;
-}
 
 #home-box {
-  background-image: url(../../assets/images/homepage/home-image.webp);
-  background-color: #9d8cd9;
+  background-image: url(../../assets/images/homepage/home-image.webp), url(../../assets/images/homepage/home-image.jpg);
+  background-color: #583DB8;
   background-size: cover;
   background-repeat: no-repeat;
   background-attachment: fixed;
@@ -136,7 +132,8 @@ a {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  background-image: url(../../assets/images/homepage/rules-image.webp);
+  background-image: url(../../assets/images/homepage/rules-image.webp), url(../../assets/images/homepage/rules-image.jpg);
+  background-color: #583DB8;
   background-size: cover;
   background-repeat: no-repeat;
   background-attachment: fixed;
@@ -212,7 +209,8 @@ a {
   transform: translate(-50%, -50%);
   width: 100%;
   height: 100svh;
-  background-image: url(../../assets/images/homepage/quiz-image.webp);
+  background-image: url(../../assets/images/homepage/quiz-image.webp), url(../../assets/images/homepage/quiz-image.png);
+  background-color: #FCBA78;
   background-size: cover;
   background-repeat: no-repeat;
   background-attachment: fixed;
@@ -331,7 +329,7 @@ a {
 }
 
 .answer-button.incorrect {
-  background-color: #7454dd;
+  background-color: #7a787c;
   border: 1px solid #880606;
   color: #880606;
   font-weight: 800;
@@ -400,7 +398,8 @@ a {
 
 /*----------------------------------------------------------------Result section*/
 .result-box {
-  background-image: url(../../assets/images/homepage/result-image.webp);
+  background-image: url(../../assets/images/homepage/result-image.webp), url(../../assets/images/homepage/result-image.jpg);
+  background-color: #583DB8;
   background-size: cover;
   background-repeat: no-repeat;
   background-attachment: fixed;
@@ -458,8 +457,8 @@ a {
 
 /*----------------------------------------------------------------Contact page*/
 #contact-body {
-  background-image: url(../../assets/images/contactpage/contact-page.webp);
-  background-color: #9d8cd9;
+  background-image: url(../../assets/images/contactpage/contact-page.webp), url(../../assets/images/contactpage/contact-page.jpg);
+  background-color: #583DB8;
   background-size: cover;
   background-repeat: no-repeat;
   background-attachment: fixed;
@@ -495,8 +494,8 @@ form {
 
 /*----------------------------------------------------------------Error 404 page*/
 #errorpage-body {
-  background-image: url(../../assets/images/homepage/404image.webp);
-  background-color: #9d8cd9;
+  background-image: url(../../assets/images/homepage/404image.webp), url(../../assets/images/homepage/404image.jpg);
+  background-color: #583DB8;
   background-size: cover;
   background-repeat: no-repeat;
   background-attachment: fixed;
@@ -556,6 +555,7 @@ i {
   display: flex;
   flex-direction: column;
 }
+
 /*-----------------------------------------------------------Media Queries*/
 /*-----------------------------------------------------------Mobile device*/
 
@@ -649,7 +649,7 @@ i {
     margin-top: 25px 
   }
 
-  .box span {
+  .box span, .timer {
     font-size: 18px;
   }
 
@@ -661,7 +661,7 @@ i {
     padding: 13px;
   }
 
-  span, #score{
+  span, #scores {
     font-size: 18px;
   }
 
@@ -714,6 +714,10 @@ i {
     margin: 90px 90px 0;
   }
 
+  .question-text{
+    font-size: 25px;
+  }
+
   .quiz-area {
     margin: 0 90px;
   }
@@ -754,12 +758,22 @@ i {
     margin: 110px 140px 0px 140px;
   }
 
+  .sound input[type="checkbox"]::after {
+    height: 28px;
+    width: 45px;
+  }
+
   .timer {
     margin-right: 140px;
+    font-size: 20px;
   }
 
   .question-answer {
     margin: 90px 90px 0;
+  }
+  
+  span, #scores {
+    font-size: 20px;
   }
 
   .quiz-area {
