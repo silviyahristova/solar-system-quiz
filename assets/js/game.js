@@ -2,7 +2,7 @@ const nameInput = document.getElementById('name-input');
 const startButton = document.querySelector(".start-btn");
 const rulesBox = document.querySelector(".rules-box");
 const exitButton = document.getElementById('exit-btn');
-const main = document.getElementById('main');
+const homeBox = document.getElementById('home-box');
 const continueButton = document.getElementById('continue-btn');
 const quizBox = document.getElementById('quiz-box');
 const soundToggle = document.getElementById('sound-toggle');
@@ -44,8 +44,8 @@ startButton.onclick = () => {
         alert("Name must be at least 3 characters long!");
     } else {
         // If the username is valid
-        rulesBox.classList.add('active'); // Show the rules box
-        main.classList.remove('active'); 
+        rulesBox.classList.add('active'); // Show the rules box 
+        homeBox.style.opacity = '0'; 
     }
 };
 
@@ -53,14 +53,14 @@ startButton.onclick = () => {
 //Return to main page
 exitButton.onclick = () => {
     rulesBox.classList.remove('active');
-    main.classList.remove('active');
+    homeBox.style.opacity = '1';
 };
 
 //Continue button
 continueButton.onclick = () => {
     quizBox.classList.add('active');
     rulesBox.classList.remove('active');
-    main.classList.remove('active');
+    homeBox.style.opacity = '0';
     startTimer();
     showQuestion(0);
     questionCounter(1);
