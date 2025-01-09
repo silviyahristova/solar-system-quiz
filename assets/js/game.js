@@ -45,7 +45,7 @@ startButton.onclick = () => {
     } else {
         // If the username is valid
         rulesBox.classList.add('active'); // Show the rules box 
-        homeBox.style.opacity = '0'; 
+        homeBox.classList.remove('active'); 
     }
 };
 
@@ -53,14 +53,14 @@ startButton.onclick = () => {
 //Return to main page
 exitButton.onclick = () => {
     rulesBox.classList.remove('active');
-    homeBox.style.opacity = '1';
+    homeBox.classList.add('active');
 };
 
 //Continue button
 continueButton.onclick = () => {
     quizBox.classList.add('active');
     rulesBox.classList.remove('active');
-    homeBox.style.opacity = '0';
+    homeBox.classList.remove('active');
     startTimer();
     showQuestion(0);
     questionCounter(1);
@@ -132,7 +132,7 @@ startAgainButton.onclick = () => {
     }
 
     quizOn = true;
-}
+};
 
 // Question and option function
 // Shuffle the questions array
