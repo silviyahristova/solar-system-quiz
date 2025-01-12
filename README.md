@@ -1,6 +1,6 @@
 # The Solar System Quiz Game
 
-![Responsive Mock-up](add mock up image here)
+![Responsive Mock-up](assets/images/docs/mock-up-image.webp)
 
 #### **By Silviya Hristova**
 
@@ -77,19 +77,19 @@ To create the wireframes, the design tool Figma is used. There were fifteen fram
 
 <details><summary>Desktop</summary>
 
-<img src="assets/images/docs/Desktop-wireframes.webp">
+<img src="assets/images/docs/desktop-wireframes.webp">
 
 </details>
 
 <details><summary>Tablet</summary>
 
-<img src="assets/images/docs/Tablet-wireframes.webp">
+<img src="assets/images/docs/tablet-wireframes.webp">
 
 </details>
 
 <details><summary>Mobile</summary>
 
-<img src="assets/images/docs//Mobile-wireframes.webp">
+<img src="assets/images/docs/mobile-wireframes.webp">
 
 </details>
 
@@ -116,9 +116,9 @@ The fonts that will be used in the website will be imported from [Google Fonts](
 
 The logo is created using [Canva](https://www.canva.com/design/DAGVX0sxbDk/QxmT7W9rV6dBT0eca0dxVw/edit) logo design tool. The colors are chosen from the color palette for the website. This will help users connect the logo with the colors of the company and website. Th symbol is related to the purpose of the website.
 
-<details><summary>Logo images</summary>
+<details><summary>Logo image</summary>
 
-![The Solar System Logo](add logo image)
+![The Solar System Quiz Logo](assets/images/docs/logo.webp)
 
 </details>
 
@@ -129,6 +129,10 @@ The images on the pages were chosen to be relevant to the content of the page. T
 **Icons**
 
 The icons that will be used are from [Font Awesome](https://fontawesome.com/) website. Having icons as the social media links immediately allows the user to easily identify which social media platform is which. Icons for the website are carefully chosen to be semantic relevance to represent concepts. They help users quickly understand and navigate throughout the website. The icons on the footer are all easily appealing on the eye for the user.
+
+**Sound**
+
+The sounds in the quiz are from [FreeSound](https://freesound.org/) website. They are used to enhance engagement and interactivity. Sound effects provide immediate feedback for correct and incorrect answers, making the experience more dynamic and enjoyable. Additionally, audio helps to guide users through the quiz and improve memory by reinforcing actions with auditory feedback. To ensure accessibility and user comfort, there is an options to mute or not the sound, ensuring the quiz is inclusive and customizable for everyone. A 15-second timer sound is included to add a sense of urgency and challenge to the quiz. It encourages quick thinking and decision-making, which makes the experience more engaging and dynamic. The timer also helps prevent overthinking or relying on external resources, ensuring that the answers are based on the participant's immediate knowledge.
 
 [Back to top](#table-of-content)
 
@@ -142,14 +146,161 @@ The icons that will be used are from [Font Awesome](https://fontawesome.com/) we
 
 ### Tools
 
++ [Bootstrap 5.2](https://getbootstrap.com/)
+    + used to create the structure and layout of the website, making it responsive on all devices.
++ [Google Fonts](https://fonts.google.com/)
+    + used to get the links to the fonts that are in the head of the html pages. These fonts are then used throughout the website.
++ [Font Awesome](https://fontawesome.com/)
+    + used to add icons to the project.
++ [GitHub](https://github.com/)
+    + used as a repository and to host the full project.
++ [GitPod](https://www.gitpod.io/)
+    + used IDE to develop the website.
++ [Figma](https://www.figma.com/)
+    + used to create the wireframes and design layout for the project.
++ [Canva](https://www.canva.com/)
+    + used to create the logo image for the project.
++ [Pexels](https://www.pexels.com/)
+    + used to source images and video that would be used within the website.
++ [Freepik](https://www.freepik.com/)
+    + used to source images that would be used within the website.
++ [Pixelied](https://pixelied.com/convert/)
+    + used to convert PNG and JPG images to WEBP format images.
++ [Favicon](https://favicon.io/)
+    + used to create the favicon for the website.
++ [Color-hex](https://www.color-hex.com/)
+    + was used to create the colour palette that was used through the website.
++ [Make Tints and Shades](https://maketintsandshades.com/)
+    + used to create the tints and shades from the main colour palette for use on the whole site.
++ [Grammarly](https://app.grammarly.com/)
+    + used to check spelling, grammar, and punctuation in the content of the website.
++ [Responsive Image Linter](https://chromewebstore.google.com/detail/responsive-image-linter/mnddginionlghpblkimpdalcecpnbjln?pli=1)
+    + used to test responsive images and provide suggestions for the sizes attribute.
++ [WebAIM](https://webaim.org/resources/contrastchecker/)
+    + used to check the color contrast.
++ [WAVE Web Accessibility](https://wave.webaim.org/)
+    + used to make web content more accessible to individuals with disabilities.
++ [Mock-up Image](https://amiresponsive.blogspot.com/)
+    + used to create the responsive mock-up image that is at the beginning of the readme file.
++ [Google Dev Tools](https://developer.chrome.com/docs/devtools)
+    + used to test features, responsiveness and to troubleshoot.
++ [Chrome Capture - screenshot & gif tool](https://chromewebstore.google.com/detail/chrome-capture-screenshot/ggaabchcecdbomdcnbahdfddfikjmphe?hl=en-US&utm_source=ext_sidebar)
+    + used to take screenshots and screen record to use in the Readme file.
++ [GIF Compressor](https://www.freeconvert.com/gif-compressor)
+    + used to compress gif files to use in the Readme file.
++ [FreeConvert](https://www.freeconvert.com/wav-to-mp3/download)
+    + used to convert WAV sound files to MP3 files.
++ [FreeSound](https://freesound.org/)
+    + used to download the sound files.
++ [Email JS](https://www.emailjs.com/)
+    + used to send email directly from the code.
++ [Youtube API](https://developers.google.com/youtube)
+    + used to add YouTube functionality in the website.
++ [Node JS](https://nodejs.org/en)
+    + runtime environment that allows to run JavaScript on the server side.
+
+[Back to top](#table-of-content)
+
 ## Features
 
 ## Future features
 
+* To add levels of difficulty - easy, medium, hard.
+
+* To add leaderboard to display top scores and rankings for users to encourage competition.
+
+* To add dynamic feedback showing detailed explanations for correct and incorrect answers.
+
+* To add option to allow users skip questions and return to them later.
+
+* To add options to create accounts to save progress and scores.
+
 ## Testing
+
+Please refer to [**here**](TESTING.md) for more information on testing HandyFix.
+
+[Back to top](#table-of-content)
 
 ## Deployment
 
+### GitHub Pages
+
+The site was deployed to GitHub pages. The steps to deploy are as follows: 
+1. In the GitHub repository, navigate to the Settings tab 
+2. From the left hand menu select 'Pages'
+3. From the source select Branch: main
+4. Click 'Save'
+5. A live link will be displayed when published successfully. 
+
+<details><summary>Screenshot</summary>
+
+<img src="assets/images/docs/deployment.webp">
+
+</details>
+
+Link to the [**live site**](https://silviyahristova.github.io/solar-system-quiz/).
+
+### Forking the GitHub Repository
+
+You can fork the repository by following these steps:
+1. Go to the GitHub repository
+1. Click on Fork button in upper right hand corner
+
+<details><summary>Screenshot</summary>
+
+<img src="assets/images/docs/forking.webp">
+
+</details>
+
+### Cloning the GitHub Repository
+
+You can clone the repository to use locally by following these steps:
+1. Navigate to the GitHub Repository you want to clone
+2. Click on the code drop down button
+3. Click on HTTPS
+4. Copy the repository link to the clipboard
+5. Open your IDE of choice (git must be installed for the next steps)
+6. Type git clone copied-git-url into the IDE terminal
+7. Press 'enter' to create the clone
+
+The project will now be cloned locally for you to use.
+
+<details><summary>Screenshot</summary>
+
+<img src="assets/images/docs/cloning.webp">
+
+</details>
+
+[Back to top](#table-of-content)
+
 ## Credits
 
+### Content
+
+* The questions in this quiz were sourced from [Google](https://www.google.com/webhp?hl=bg&sa=X&ved=0ahUKEwiGxO_6_vCKAxXkVkEAHXwEOBsQPAgI), ensuring that they are accurate and relevant.
+
+### Images and Sounds
+
+All images have been downloaded from: [Pexels](https://www.pexels.com/) and [Freepik](https://www.freepik.com/). The sounds have been downloaded from [FreeSound](https://freesound.org/).
+
+### Code
+
+Code from EmailJS is used to create an API for sending emails directly from the quiz application without needing a dedicated server or backend. EmailJS allows integration with client-side code, enabling me to send email notifications, using their prebuilt code and templates. I implemented the provided code snippets and customized them to meet the specific requirements of the application, ensuring a seamless and efficient email-sending process.
+
+Information on how to use the [JavaScript Fetch API](https://www.digitalocean.com/community/tutorials/how-to-use-the-javascript-fetch-api-to-get-data) to get data helped to understand how to retrieve data asynchronously from a server. It explains how to make HTTP requests, handle responses (e.g., JSON), and manage errors using Promises. This method allows you to easily interact with APIs, improving performance and simplifying the code compared to older methods like XMLHttpRequest.
+
+### Tutorials
+
+[Back to top](#table-of-content)
+
 ## Acknowledgements
+
+This project is for educational purpose and was completed as a Portfolio 2 Project for the Full Stack Software Developer Diploma at the Code Institute. I would like to thank 
+
+* My mentor [Rory Patrick Sheridan](https://www.linkedin.com/in/rp-sheridan/) for his guidance, support and suggestions during the project.
+* Director [Pasquale Fasulo](https://www.linkedin.com/in/pasquale-fasulo-68612218a/) at Bristol City College for his understanding, guidance and feedbacks throughout the project.
+* The whole team at [Code Institute](https://codeinstitute.net/) for their teaching and support.
+* [Slack Community](https://code-institute-room.slack.com/ssb/redirect) for the help, advices and support. 
+* My husband Emil Stoyanov for continues support.
+
+[Back to top](#table-of-content)
