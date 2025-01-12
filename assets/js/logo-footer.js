@@ -4,7 +4,7 @@ const headerHTML = `
         <div class="row">
             <div class="col-6">
                 <a class="logo" href="index.html">
-                    <img src="assets/images/homepage/logo.webp" alt="The planet Earth" id="logoimage" srcset="assets/images/homepage/logo.webp" style="width:70px; height:60px;">
+                    <img src="assets/images/homepage/logo.webp" alt="The planet Earth" id="logoimage" srcset="assets/images/homepage/logo.webp">
                 </a>
             </div>
         </div>

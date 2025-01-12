@@ -12,6 +12,10 @@ body {
   font-size: 100%;
 }
 
+main {
+  min-height: 100vh;
+}
+
 img {
   max-width: 100%;
   height: auto;
@@ -25,8 +29,15 @@ img {
   color: #fff;
 }
 
-/*-----------------------------------------------------------Header*/
+.active {
+  display: block;
+}
 
+.col-6{
+  padding: 0;
+}
+
+/*-----------------------------------------------------------Home*/
 #home-box {
   background-image: url(../../assets/images/homepage/home-image.webp), url(../../assets/images/homepage/home-image.jpg);
   background-color: #583DB8;
@@ -34,18 +45,20 @@ img {
   background-repeat: no-repeat;
   background-attachment: fixed;
   width: 100%;
-  height: 100svh;
+  min-height:100svh;
+  display: none;
 }
 
-#logo {
-  position: fixed;
-  background: transparent;
-  overflow: hidden;
-  margin-top: 10px;
+#home-box.active {
+  opacity: 1;
+  pointer-events: auto;
+  display: block;
+  position: relative;
 }
 
 #logoimage {
-  width: 35%;
+  width: 70px;
+  height: 60px;
 }
 
 .heading-font {
@@ -54,7 +67,6 @@ img {
   font-weight: 500;
   margin: 0;
   padding-bottom: 5px;
-  padding-top: 70px;
 }
 
 h2 {
@@ -78,6 +90,7 @@ button {
 
 .text-under-heading {
   margin: 15px 30px;
+  background-color: rgba(0, 0, 0, 0.2);
 }
 
 a {
@@ -90,6 +103,7 @@ a {
   align-items: center;
 }
 
+/*--------------Style the name input on home page*/
 #name {
   margin-top: 55px;
 }
@@ -104,6 +118,7 @@ a {
 
 .home-contact-box {
   margin-top: 55px;
+  padding-bottom: 75px;
 }
 
 ::-webkit-input-placeholder {
@@ -111,6 +126,7 @@ a {
   color: #464545;
 }
 
+/*--------------Style the start button on home page*/
 .start-btn {
   font-size: 115%;
   font-weight: 600;
@@ -129,9 +145,6 @@ a {
 
 .rules-box {
   position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
   background-image: url(../../assets/images/homepage/rules-image.webp), url(../../assets/images/homepage/rules-image.jpg);
   background-color: #583DB8;
   background-size: cover;
@@ -139,17 +152,20 @@ a {
   background-attachment: fixed;
   background-position: center;
   width: 100%;
-  height: 100svh;
+  min-height: 100svh;
   opacity: 0;
   pointer-events: none;
+  display: none;
 }
 
 .rules-box.active {
   opacity: 1;
   pointer-events: auto;
+  display: block;
 }
 
 .rules-box .text-under-heading {
+  background-color: rgba(0, 0, 0, 0);
   margin: 3px 20px;
 }
 
@@ -157,7 +173,8 @@ a {
   margin-bottom: 0;
 }
 
-.rule-list{
+.rules-list{
+  padding-bottom: 75px;
   margin: 20px 0;
 }
 
@@ -172,6 +189,7 @@ a {
   font-size: 18px;
 }
 
+/*--------------Style the exit and continue buttons in rules section*/
 .rules-box .btn-group .info-btn {
   font-size: 115%;
   font-weight: 600;
@@ -204,24 +222,28 @@ a {
 
 .quiz-box {
   position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
   width: 100%;
-  height: 100svh;
+  min-height: 100svh;
   background-image: url(../../assets/images/homepage/quiz-image.webp), url(../../assets/images/homepage/quiz-image.png);
   background-color: #FCBA78;
   background-size: cover;
   background-repeat: no-repeat;
   background-attachment: fixed;
+  background-position: center;
   color: #000;
   opacity: 0;
   pointer-events: none;
+  display: none;
 }
 
 .quiz-box.active {
   opacity: 1;
   pointer-events: auto;
+  display: block;
+}
+
+.quiz-area {
+  padding-bottom: 75px;
 }
 
 .box {
@@ -229,13 +251,17 @@ a {
 }
 
 .settings {
-  margin: 120px 20px 0px 20px;
+  margin: 60px 20px 0px 20px;
 }
 
+/*--------------aligh on the right side scores and sound toggle in quiz area*/
 .right-side {
   float: right;
   padding: 8px;
   margin-top: 10px;
+  position: absolute;
+  top: 0;
+  right: 0;
 }
 
 .score-box {
@@ -321,6 +347,7 @@ a {
   background-color: #9aa0e1;
 }
 
+/*--------------Style for correct answer */
 .answer-button.correct {
   background-color: #fedebe;
   border: 3px solid #16990a;
@@ -328,6 +355,7 @@ a {
   color: #16990a;
 }
 
+/*--------------Style for incorrect answer */
 .answer-button.incorrect {
   background-color: #7a787c;
   border: 1px solid #880606;
@@ -345,6 +373,7 @@ a {
   align-items: center;
 }
 
+/*--------------Style the next and restart buttons on quiz area*/
 .quiz-box .btn-group .info-btn {
   font-size: 115%;
   font-weight: 600;
@@ -404,19 +433,18 @@ a {
   background-repeat: no-repeat;
   background-attachment: fixed;
   position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
   width: 100%;
-  height: 100svh;
+  min-height: 100svh;
   color: #000;
   opacity: 0;
   pointer-events: none;
+  display: none;
 }
 
 .result-box.active {
-  opacity: 1;
+  opacity: 1;  
   pointer-events: auto;
+  display: block;
 }
 
 .percentage {
@@ -441,6 +469,11 @@ a {
   font-weight: 600;
 }
 
+.end-section{
+  margin-top: 50px;
+  padding-bottom: 75px;
+}
+
 .win-message {
   font-size: 20px;
   margin: 15px 20px 0 20px;
@@ -451,7 +484,6 @@ a {
 }
 
 .result-box footer {
-  margin-top: 25px;
   color: #fff;
 }
 
@@ -463,14 +495,13 @@ a {
   background-repeat: no-repeat;
   background-attachment: fixed;
   width: 100%;
-  height: 100svh;
+  min-height: 100svh;
 }
 
 form {
   display: flex;
   flex-direction: column;
   margin: 10px;
-
 }
 
 .form-group {
@@ -492,6 +523,14 @@ form {
   border-radius: 10px;
 }
 
+.contact-box {
+  padding-top: 55px;
+}
+
+#contact-body #footer {
+  position:static;
+}
+
 /*----------------------------------------------------------------Error 404 page*/
 #errorpage-body {
   background-image: url(../../assets/images/homepage/404image.webp), url(../../assets/images/homepage/404image.jpg);
@@ -501,24 +540,37 @@ form {
   background-attachment: fixed;
   background-position: center;
   width: 100%;
-  height: 100svh;
+  min-height: 100svh;
 }
 
 .center-page {
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-  width: 100%;
-  height: 100svh;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
+.padding {
+  padding-bottom: 75px;
+}
+
+#errorpage-body .link{
+  padding:5px 15px;
+}
+
+#errorpage-body .text-under-heading {
+  margin: 15px 0 20px 0;
+}
 /*----------------------------------------------------------------Footer*/
 
 #footer {
-  position: fixed;
+  position: absolute;
   bottom: 0;
   width: 100%;
-  margin-top: auto;
+  margin-top:inherit;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
 }
 
 #footer span {
@@ -541,10 +593,6 @@ form {
   justify-content: center;
 }
 
-i {
-  overflow: hidden;
-}
-
 .social-media-link {
   color: #fff;
   font-size: 25px;
@@ -562,16 +610,19 @@ i {
 @media screen and (max-width: 320px) {
   #logoimage {
     width: 40%;
+    height: 100%;
   }
 }
 
 @media screen and (min-width: 321px) {
   #logoimage {
     width: 40%;
+    height: 100%;
   }
 }
 
 @media screen and (min-width: 375px) {
+
   .rules-list {
     margin-top: 35px;
   }
@@ -586,12 +637,8 @@ i {
     margin-top: 55px;
   }
 
-  .home-contact-box {
-    margin-top: 75px  
-  }
-
   .rules-list {
-    margin-top: 55px 
+    margin-top: 55px; 
   }
 
   .rules-box .btn-group .info-btn {
@@ -689,7 +736,7 @@ i {
   #logoimage {
     width: 18%;
   }
-
+  
   .heading-font {
     font-size: 90px;
   }
@@ -792,7 +839,11 @@ i {
 
 @media screen and (min-width: 1200px) {
   #logoimage {
-    width: 20%;
+    width: 10%;
+  }
+
+  .home-contact-box {
+    margin-top: 180px;
   }
 
   .heading-font {
