@@ -2,6 +2,7 @@ const http = require(`http`)
 const fs = require(`fs`)
 const port = 3000
 
+//HTTP server that handles requests and responses.
 const server = http.createServer(function (req, res) {
     res.writeHead(200, { 'Content-Type': 'text/html' })
     fs.readFile(`index.html`, function (error, data) {
@@ -15,6 +16,7 @@ const server = http.createServer(function (req, res) {
     })
 });
 
+//Start the server to listen on the specified port and logs success or error.
 server.listen(port, function (error) {
     if (error) {
         console.log('404.html', error)

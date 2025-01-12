@@ -10,8 +10,9 @@ const serviceID = 'service_d5etogh';
 const templateID = 'template_ff9vwue';
 const publicKey = 'oxWAJWFo--FmtxF1w';
 
+//event listener to handle the form submission.
 form.addEventListener('submit', (e) => {
-  e.preventDefault();
+  e.preventDefault(); 
   const emailData = {
     from_name : nameInput.value,
     user_email : emailInput.value,
@@ -21,6 +22,7 @@ form.addEventListener('submit', (e) => {
     developer_name : developerName,
   };
 
+  //Sends the email using the EmailJS service with the provided data.
   emailjs.send(serviceID, templateID, emailData).then(
     () => {
       nameInput.value = '',
