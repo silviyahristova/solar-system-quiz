@@ -65,15 +65,21 @@ By making the site fully responsive, the site aims to be easily accessible no ma
 
 The main features that will be implemented into the website will be included on two separate pages. The design of the website should look fun, educational and interesting at the same time simple and eye-catching. In help to create this design will be carefully selected color palette and fonts.
 
-The site will have challenging questions before the start of the quiz. This will help users think, that they are participating in an adventure quiz, so they can be motivated to answer the questions correctly to prove themselves that they are worthy of the challenge. The website will have how to play section, which will include the rules of the quiz. It will have also contact details and social media links, making it easy for users to get in touch.
+The site will have challenging questions before starting of the quiz. This will help users think, that they are participating in an adventure quiz, so they can be motivated to answer the questions correctly to prove themselves that they are worthy of the challenge. The website will have how to play section, which will include the rules of the quiz. It will have also contact details and social media links, making it easy for users to get in touch.
 
 ### **Structure**
 
-The structure of the website is to have two separate pages - game page and contact page. It is designed to be mobile-first design. Every page will have a header,logo and footer. There will be an additional 404.html page.
+The structure of the website is to have two separate pages - game page and contact page. It is designed to be mobile-first design. Every page will have a header with logo and footer. There will be an additional 404.html page. 
+
+The homepage has a simple and single web page structure, with all the content replaced by the JavaScript code at different points in the game. There are 4 main section within the page which appear and disappear depending on where you are in the game. The first section serves as the main welcoming area. It includes a prominent main heading, followed by a paragraph designed to challenge and encourage users to try the quiz. Below the paragraph, there is an input field where users are required to enter their name before starting the quiz. A button is provided to initiate the game. At the bottom of the section, there is a "Contact Us" button, which allows users to submit feedback or ask questions by filling out a form. The second section is the "How to play" section, which provides the rules of the game along with a good luck message. It includes two buttons: one to exit the quiz and return to the main section, and another to continue, which opens the quiz section. The quiz area is the section where the game begins. In the top-right corner, there is a score display and a sound toggle button to mute or play the sound, with the sound muted by default. Below this is the question counter, along with a 30-second timer for answering each question. The main area displays the question and four answer options, with only one being correct. When the user selects an answer, the correct option is highlighted, accompanied by corresponding sounds for correct and incorrect answers. Additionally, a 15-second warning sound plays when only 15 seconds remain to answer the question.At the end of the section, there are two buttons. The "Next" button, which can only be clicked if the user has answered the current question, allows them to proceed to the next question. The "Restart" button takes the user back to the main welcoming section, enabling them to restart the game. The last section is the result section, which displays the user's score as a percentage along with a congratulatory message. As a reward for participating in the game, there is a YouTube video provided where the user can learn more about the solar system. At the end of the section, there is a "Start Again" button, allowing the user to restart the game from the beginning.
+
+The contact page contains a contact form with all fields marked as required. After submitting the form, a confirmation message is displayed to inform the user that their message has been sent. Additionally, using the EmailJS API, the user will receive an email confirming that their message has been received.
+
+The 404 page includes a "Back to Home" button, allowing the user to return to the main welcoming section.
 
 ### **Skeleton**
 
-To create the wireframes, the design tool Figma is used. There were fifteen frames created- for the main function on the two pages and for three devices- desktop, tablet, and mobile. They were created to help establish a clear and organized structure for the website. They provide an outline of the layout how elements will be arranged on the screen, and how the interface will adopt the different screen sizes and devices, laying the foundation for responsive design.
+To create the wireframes, the design tool Figma is used. There were fifteen frames created- for the main sections on the two pages and for three devices- desktop, tablet, and mobile. They were created to help establish a clear and organized structure for the website. They provide an outline of the layout how elements will be arranged on the screen, and how the interface will adopt the different screen sizes and devices, laying the foundation for responsive design.
 
 <details><summary>Desktop</summary>
 
@@ -198,10 +204,107 @@ The sounds in the quiz are from [FreeSound](https://freesound.org/) website. The
     + used to add YouTube functionality in the website.
 + [Node JS](https://nodejs.org/en)
     + runtime environment that allows to run JavaScript on the server side.
++ [ChatGPT](https://chatgpt.com/)
+    +  used to check my spelling and improve my sentences in Readme and Testing files.
 
 [Back to top](#table-of-content)
 
 ## Features
+
+### **Header**
+
+<details><summary>Screenshot</summary>
+
+<img src="assets/images/docs/header.png">
+</details>
+
+* The logo appears on all sections and pages and is fully responsive. The logo is clickable and serves as a user-friendly feature, allowing the user to easily navigate back to the main section.
+
+### **Footer**
+
+<details><summary>Screenshot</summary>
+
+<img src="assets/images/docs/footer.png">
+</details>
+
+* The footer appears on all section and pages and is fully responsive. It contains my name as creator and links to social-media pages, all of which open in a separate tab.
+
+### **Buttons and Links**
+
+<details><summary>Screenshots</summary>
+
+<img src="assets/images/docs/start-button-name.png">, <img src="assets/images/docs/contact-button.png">, <img src="assets/images/docs/exit-button.png">
+<img src="assets/images/docs/send-button.png">, <img src="assets/images/docs/back-to-home-button.png">, <img src="assets/images/docs/restart-button.png">
+<img src="assets/images/docs/continue-button.png">, <img src="assets/images/docs/sound-button.png">, <img src="assets/images/docs/start-again-button.png">, <img src="assets/images/docs/next-button.png">, <img src="assets/images/docs/answers-button.png">
+</details>
+
+* All the links that look like a button and buttons have a hover effect. They navigate users through the site. When a user clicks the button, a JavaScript function is triggered to change the current page or navigate to a different section of the site.
+
+* Restart button allows the user to go back to the main section. Th button has a hover effect with a colour transition. The button has transparent background, rather than other buttons, this will not draw the user's attention away from the game. 
+
+* The "Start" button triggers an alert message if the name input field is not filled. If the input field contains a name, it proceeds to display the "How to Play" section.
+
+* The "Contact Us" button intuitively navigates users to the contact page on the website.
+
+* The "Exit Quiz" button has a transparent background, ensuring it does not draw unnecessary attention, so users are less likely to accidentally quit the game.
+
+* The "Continue" button triggers the quiz area, allowing the user to start the game. Before clicking the button, the user can read the rules in the "How to Play" section.
+
+* The sound button is off by default. Once clicked, the sound is turned on, enabling the playback of background music, sounds for correct and incorrect answers, and a 15-second timer sound. 
+
+* The "Next" button cannot be clicked until the user selects an answer. Once an answer is chosen, the button becomes clickable, allowing the user to proceed to the next question. If the user does not choose an answer before the timer ends, an alert message will appear notifying them that they are moving to the next question. The next question will then be triggered automatically. If it is the last question and no answer is selected within the time limit, the result section will be triggered automatically.
+
+* The four answer options have a hover effect. The correct answer is highlighted with a green font color and border, while the wrong answer is displayed with a grey background, red font color, and border for better contrast.
+
+### **Favicon**
+
+<details><summary>Screenshots</summary>
+
+* Favicon - desktop
+
+<img src="assets/images/docs/favicon-tab.png">
+
+* Favicon - mobile
+
+<img src="assets/images/docs/favicon-mobile.jpg" width=300px>
+</details>
+
+* The favicon is a feature to display the logo at the top tab of the site. This helps to make the site recognizable for users.
+
+### **Alert messages**
+
+<details><summary>Screenshots</summary>
+
+* Name input field
+
+<img src="assets/images/docs/alert-message.png">
+
+* Timer ends from question 1 to 9
+
+<img src="assets/images/docs/timer-ends.png">
+
+* Last question timer ends
+
+<img src="assets/images/docs/last-question-timer-end.png">
+
+* Contact-form
+
+<img src="assets/images/docs/contact-field.png">
+
+* Contact-form send
+
+<img src="assets/images/docs/form-send.png">
+</details>
+
+* Alert messages notify the user at all times about any errors or successes, ensuring clear communication throughout the process.
+
+### **Quiz area**
+
+### **Result section**
+
+### **404 page**
+
+### **JavaScript Functionality**
 
 ## Future features
 
@@ -217,7 +320,7 @@ The sounds in the quiz are from [FreeSound](https://freesound.org/) website. The
 
 ## Testing
 
-Please refer to [**here**](TESTING.md) for more information on testing HandyFix.
+Please refer to [**here**](TESTING.md) for more information on testing Solar system Quiz game.
 
 [Back to top](#table-of-content)
 
@@ -285,11 +388,32 @@ All images have been downloaded from: [Pexels](https://www.pexels.com/) and [Fre
 
 ### Code
 
-Code from EmailJS is used to create an API for sending emails directly from the quiz application without needing a dedicated server or backend. EmailJS allows integration with client-side code, enabling me to send email notifications, using their prebuilt code and templates. I implemented the provided code snippets and customized them to meet the specific requirements of the application, ensuring a seamless and efficient email-sending process.
+* [Bootstrap 5](https://getbootstrap.com/): Bootstrap library used throughout the project for layout and responsiveness.
 
-Information on how to use the [JavaScript Fetch API](https://www.digitalocean.com/community/tutorials/how-to-use-the-javascript-fetch-api-to-get-data) to get data helped to understand how to retrieve data asynchronously from a server. It explains how to make HTTP requests, handle responses (e.g., JSON), and manage errors using Promises. This method allows you to easily interact with APIs, improving performance and simplifying the code compared to older methods like XMLHttpRequest.
+* [Favicon.io](https://favicon.io/): Used to create the site Favicon and provided the code in the head of all pages.
+
+* [Font Awesome](https://fontawesome.com/): Used to add icons to the project and provided the stylesheet link in the head of all pages.
+
+* [Google Fonts](https://fonts.google.com/): Used to get the links to the fonts that are in the head of the html pages.
+
+* [EmailJS](https://www.emailjs.com/): Used to create an API for sending emails directly from the quiz application without needing a dedicated server or backend. EmailJS allows integration with client-side code, enabling me to send email notifications, using their prebuilt code and templates. I implemented the provided code snippets and customized them to meet the specific requirements of the application, ensuring a seamless and efficient email-sending process.
+
+* [JavaScript Fetch API](https://www.digitalocean.com/community/tutorials/how-to-use-the-javascript-fetch-api-to-get-data): Used to get data helped to understand how to retrieve data asynchronously from a server. It explains how to make HTTP requests, handle responses (e.g., JSON), and manage errors using Promises. This method allows to easily interact with APIs, improving performance and simplifying the code compared to older methods like XMLHttpRequest.
 
 ### Tutorials
+
++ [MDN Web Docs](https://developer.mozilla.org/en-US/)
+    + used for instant help resource for developers, by developers.
++ [W3School](https://www.w3schools.com/)
+    + used for HTML, CSS, JS syntax and tutorials.
++ [Stack Overflow](https://stackoverflow.com/)
+    + used for finding the solution to problem during coding.
++ [Code Institute Template](https://github.com/Code-Institute-Org/ci-full-template)
+    + used to generate the workspace for the project.
++ [Markdown Guide](https://www.markdownguide.org/)
+    + used for Markdown syntax.
++ [Markdown Tools](https://www.markdowntools.com/)
+    + used for Markdown syntax.
 
 [Back to top](#table-of-content)
 
@@ -297,8 +421,8 @@ Information on how to use the [JavaScript Fetch API](https://www.digitalocean.co
 
 This project is for educational purpose and was completed as a Portfolio 2 Project for the Full Stack Software Developer Diploma at the Code Institute. I would like to thank 
 
-* My mentor [Rory Patrick Sheridan](https://www.linkedin.com/in/rp-sheridan/) for his guidance, support and suggestions during the project.
 * Director [Pasquale Fasulo](https://www.linkedin.com/in/pasquale-fasulo-68612218a/) at Bristol City College for his understanding, guidance and feedbacks throughout the project.
+* My mentor [Rory Patrick Sheridan](https://www.linkedin.com/in/rp-sheridan/) for his guidance, support and suggestions during the project.
 * The whole team at [Code Institute](https://codeinstitute.net/) for their teaching and support.
 * [Slack Community](https://code-institute-room.slack.com/ssb/redirect) for the help, advices and support. 
 * My husband Emil Stoyanov for continues support.

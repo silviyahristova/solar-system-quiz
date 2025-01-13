@@ -835,6 +835,10 @@ form {
     margin: 7px;
     padding: 10px;
   }
+
+  .contact-box {
+    padding-top: 35px;
+  }
 }
 
 @media screen and (min-width: 1200px) {
@@ -871,6 +875,6 @@ form {
   }
 
   form {
-    margin: 0 650px 55px;
+    margin: 0 450px 55px;
   }
 }
