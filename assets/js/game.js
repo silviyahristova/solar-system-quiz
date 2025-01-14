@@ -16,7 +16,6 @@ let quizOn= true;
 let questionCount = 0;
 let maxQuestions = 10;
 let questionNumb = 1;
-let username = "";
 let userScore = 0;
 let countdown; 
 let timeLeft = 30;
@@ -234,17 +233,6 @@ function answerSelected(answer, index) {
 // Show the first question
 showQuestion(currentQuestionIndex);
 
-// Move to next question
-function nextQuestion() {
-    if (currentQuestionIndex < shuffledQuestions.length - 1) {
-        currentQuestionIndex++;
-        showQuestion(currentQuestionIndex);
-        startTimer();  
-    } else {
-        showResultBox();
-    }
-}
-
 // When last question is answered then timer and sound stopped, not playing when result page is on
 function handleLastQuestion() {
     quizOn = false; // Set to false to stop sounds from playing
@@ -353,14 +341,6 @@ function resetAllSounds() {
     soundWrong.currentTime = 0;
 }
 
-//Play sound  if sound is on
-function playSound(sound) {
-    if (soundOn) {
-        sound.currentTime = 0;
-        sound.play();
-    }
-}
-
 //Result 
 function showResultBox() {
     stopTimer(); // Stop timer
@@ -402,9 +382,9 @@ function showResultBox() {
 * Video is not autoplaying, could not mute the video
 * API KEY is restricted to be used only for this web applicatin and only for youtube. This make it secure and not exposed to leaking 
 */
-const apiKey = 'AIzaSyBokzxpJV7ZQp9THNMqdqyr71gW8-9jxwQ';  // Youtube API key
-const videoId = 'w36yxLgwUOc';  // YouTube video ID
-const query = 'Solar system interesting facts';
+
+//const apiKey = 'AIzaSyBokzxpJV7ZQp9THNMqdqyr71gW8-9jxwQ';  // Youtube API key
+//const query = 'Solar system interesting facts';
 
 //Not used at the end the project, but left it here as when amend the project with future features to use it. It works
 /*function searchVideo() {
@@ -420,6 +400,7 @@ const query = 'Solar system interesting facts';
 *   }
 */
 
+const videoId = 'w36yxLgwUOc';  // YouTube video ID
 // Function to embed the YouTube video
 function embedYouTubeVideo(videoId) {
     const videoContainer = document.getElementById('video-info');

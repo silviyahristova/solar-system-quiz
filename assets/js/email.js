@@ -29,7 +29,6 @@ form.addEventListener('submit', (e) => {
       emailInput.value = '',
       messageInput.value = '',
       subjectInput.value = '',
-      console.log('Success');
       alert('Your email has been sent successfully!');
     }, 
     (error) => {

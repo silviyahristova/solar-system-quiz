@@ -238,7 +238,7 @@ The sounds in the quiz are from [FreeSound](https://freesound.org/) website. The
 
 <img src="assets/images/docs/start-button-name.png">, <img src="assets/images/docs/contact-button.png">, <img src="assets/images/docs/exit-button.png">
 <img src="assets/images/docs/send-button.png">, <img src="assets/images/docs/back-to-home-button.png">, <img src="assets/images/docs/restart-button.png">
-<img src="assets/images/docs/continue-button.png">, <img src="assets/images/docs/sound-button.png">, <img src="assets/images/docs/start-again-button.png">, <img src="assets/images/docs/next-button.png">, <img src="assets/images/docs/answers-button.png" width=300px>
+<img src="assets/images/docs/continue-button.png">, <img src="assets/images/docs/sound-button.png">, <img src="assets/images/docs/start-again-button.png">, <img src="assets/images/docs/next-button.png">, <img src="assets/images/docs/answers-button.png">
 </details>
 
 * All the links that look like a button and buttons have a hover effect. They navigate users through the site. When a user clicks the button, a JavaScript function is triggered to change the current page or navigate to a different section of the site.
@@ -387,7 +387,7 @@ The sounds in the quiz are from [FreeSound](https://freesound.org/) website. The
 
 <details><summary>Screenshots</summary>
 
-<img src="assets/images/docs/404page.png" width=300px>
+<img src="assets/images/docs/404page.png">
 </details>
 
 * A 404 page is an error page displayed when a user tries to access a webpage that cannot be found on the server. This can happens when the user mistypes a URL, the page has been moved or deleted or the link is broken or outdated. It informs users that the page they were looking for does not exist or cannot be found. It includes a button that guide users back to main sections.  The 404 page is crucial for handling errors in a way that keeps users on the site and offers them a smooth navigation experience.
