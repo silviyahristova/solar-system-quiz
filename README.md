@@ -24,6 +24,7 @@ This is the documentation for The Solar System Quiz Game’s website. It has bee
   - [**Languages**](#languages)
   - [**Tools**](#tools)
 - [**Features**](#features)
+- [**JavaScript Functionality**](#javascript-functionality)
 - [**Future features**](#future-features)
 - [**Testing**](#testing)
 - [**Deployment**](#deployment)
@@ -196,6 +197,8 @@ The sounds in the quiz are from [FreeSound](https://freesound.org/) website. The
     + used to compress gif files to use in the Readme file.
 + [FreeConvert](https://www.freeconvert.com/wav-to-mp3/download)
     + used to convert WAV sound files to MP3 files.
++ [AdobeExpress](https://www.adobe.com/express/)
+    + used to convert MP4 video files to GIF files.
 + [FreeSound](https://freesound.org/)
     + used to download the sound files.
 + [Email JS](https://www.emailjs.com/)
@@ -235,7 +238,7 @@ The sounds in the quiz are from [FreeSound](https://freesound.org/) website. The
 
 <img src="assets/images/docs/start-button-name.png">, <img src="assets/images/docs/contact-button.png">, <img src="assets/images/docs/exit-button.png">
 <img src="assets/images/docs/send-button.png">, <img src="assets/images/docs/back-to-home-button.png">, <img src="assets/images/docs/restart-button.png">
-<img src="assets/images/docs/continue-button.png">, <img src="assets/images/docs/sound-button.png">, <img src="assets/images/docs/start-again-button.png">, <img src="assets/images/docs/next-button.png">, <img src="assets/images/docs/answers-button.png">
+<img src="assets/images/docs/continue-button.png">, <img src="assets/images/docs/sound-button.png">, <img src="assets/images/docs/start-again-button.png">, <img src="assets/images/docs/next-button.png">, <img src="assets/images/docs/answers-button.png" width=300px>
 </details>
 
 * All the links that look like a button and buttons have a hover effect. They navigate users through the site. When a user clicks the button, a JavaScript function is triggered to change the current page or navigate to a different section of the site.
@@ -275,36 +278,132 @@ The sounds in the quiz are from [FreeSound](https://freesound.org/) website. The
 
 <details><summary>Screenshots</summary>
 
-* Name input field
+* Message to enter the name
+
+<img src="assets/images/docs/message-name.png">
+
+* Message regarding the name input field
 
 <img src="assets/images/docs/alert-message.png">
 
-* Timer ends from question 1 to 9
+* Message about the timer from question 1 to 9
 
 <img src="assets/images/docs/timer-ends.png">
 
-* Last question timer ends
+* Message about last question timer
 
 <img src="assets/images/docs/last-question-timer-end.png">
 
-* Contact-form
+* Message about Contact-form
 
 <img src="assets/images/docs/contact-field.png">
 
-* Contact-form send
+* Message about submiting the form
 
 <img src="assets/images/docs/form-send.png">
 </details>
 
-* Alert messages notify the user at all times about any errors or successes, ensuring clear communication throughout the process.
+* Alert messages notify the user at all times about significant events, such as a completed action or a required input, ensuring clear communication throughout the process. They inform users about errors or issues, such as missing fields in a form or invalid data. Alerts are used to provide immediate feedback or important information to users during their interaction with a website. They are displayed as popup boxes with "OK" button and are an integral part of user communication in JavaScript.
 
 ### **Quiz area**
 
+<details><summary>Screenshots</summary>
+
+<img src="assets/images/docs/question-count-1.png">, <img src="assets/images/docs/question-count-2.png">
+</details>
+
+* Question Counter serves to keep track of the user's progress through the questions. It displays which question the user is currently answering and the total number of questions in the quiz. It shows the user how far they’ve progressed in the quiz. By showing progress, the question counter provides real-time feedback, ensuring users feel in control. It creates a more engaging and structured experience for the user.
+
+<details><summary>Screenshots</summary>
+
+<img src="assets/images/docs/score-0.png">, <img src="assets/images/docs/score-3.png">
+</details>
+
+* The score counter keeps track of the user's performance by calculating and displaying their current score based on their answers. It provides immediate feedback on how well the user is doing during the quiz. Also encourages users to stay focused and try harder to improve their score. The score counter makes the quiz more interactive and rewarding. The score increases whenever the user selects the correct answer. The score remains unchanged for incorrect answers.
+
+<details><summary>Screenshots</summary>
+
+<img src="assets/images/docs/sound-off.png">, <img src="assets/images/docs/sound-on.png">
+</details>
+
+* The sound button in athe quiz allows users to control the audio features of the quiz. It provides an option to enable or disable sounds during the quiz, enhancing the user experience by accommodating individual preferences. This feature lets users choose whether they want audio, making the experience customizable and inclusive.The sound button is muted by default to avoid unexpected noise when the quiz starts. Once clicked, the sound is turned on, activating all audio features, such as background music, answer feedback and 15 seconds warning, of the quiz.Audio effects make the quiz more interactive and immersive.
+
+<details><summary>Screenshots</summary>
+
+<img src="assets/images/docs/timer-30sec.png">, <img src="assets/images/docs/timer-24sec.png">
+</details>
+
+* The timer in a quiz is a countdown mechanism to limit the time a user has to answer each question or complete the quiz. It adds a sense of urgency, challenge, and structure to the quiz. It encourages quick thinking and promotes decision-making under pressure, making the quiz more dynamic and engaging.Timer ensures users don’t take too long on a single question, keeping the quiz on track. The timer function triggers actions when the timer runs out, such as moving to the next question automatically, displaying an alert notifying the user that time is up and ending the quiz and showing the results if it’s the final question. The timer has a fixed amount of time for each question, which is 30 seconds. There is a 15 second warning - a sound signals the halfway point.The timer making the experience more dynamic and structured for users.
+
+<details><summary>Screenshots</summary>
+
+* Correct answer is selected
+
+<img src="assets/images/docs/correct-answer-select.png" width=300px>
+
+* Wrong answer is selected
+
+<img src="assets/images/docs/wrong-answer-select.png" width=300px>
+
+* Next button is off
+
+<img src="assets/images/docs/next-button-off.png" width=300px>
+
+* Next button is on
+
+<img src="assets/images/docs/next-button-on.png" width=300px>
+</details>
+
+* The Question and Answer Area is the central part of the quiz designed for user interaction. It displays the current question in a clear and prominent format, along with multiple-choice answer options, four, where one is correct. Users can select an answer by clicking on an option, triggering immediate feedback — highlighting the correct answer in green and the incorrect one in red, with corresponding sounds if the audio is enabled. The area works alongside navigation button "Next" to record responses and proceed to the next question. Key features include a visually prominent question display, interactive answer options with hover effects, and a feedback mechanism to indicate correctness. This area ensures clarity by focusing users on one question at a time, enhances engagement with interactive feedback, and provides a well-structured layout for a seamless quiz experience. It is the most critical part of the quiz, enabling users to actively participate and complete it effectively.
+
+* The "Next" button cannot be clicked until the user selects an answer. This ensures that the user engages with the question before moving forward. Once an answer is selected, the button becomes active, allowing the user to proceed to the next question. 
+
+* Additionally, there is a "Restart" button that allows users to restart the quiz. This button has a transparent background, making it less visually prominent to avoid drawing unnecessary attention. This design choice ensures the primary focus remains on the quiz experience, while the restart option is still available when needed.
+
 ### **Result section**
+
+<details><summary>Screenshots</summary>
+
+<img src="assets/images/docs/result-percentage.png">
+</details>
+
+* The result in percentage indicates the user's performance by showing how many questions they answered correctly, expressed as a percentage of the total questions. It provides a clear measure of how well the user did in the quiz. The percentage score is a straightforward, quantitative measure that helps users understand their result without needing to interpret the number of correct or incorrect answers.
+
+<details><summary>Screenshots</summary>
+
+<img src="assets/images/docs/message-result-1.png">, <img src="assets/images/docs/message-result-2.png">, <img src="assets/images/docs/message-result-3.png">
+</details>
+
+* After the user receives their result percentage, a personalized message is displayed based on their performance. This message provide feedback and encouragement, helping users understand their score in a supportive way. Depending on the score, the message is different. A tailored message makes the result feel more personal, adding a human touch to the quiz experience. It will acknowledge the effort and engagement of the user. A message can motivate users to retake the quiz and improve their score.
+
+<details><summary>Screenshots</summary>
+
+<img src="assets/images/docs/youtube-api.png">
+</details>
+
+* The YouTube API is integrated into the quiz as a prize to enhance the user experience by providing additional value after completing the game. The goal is to reward participants for their engagement and offer them something educational and entertaining. By offering a YouTube video related to the quiz topic (e.g., about the solar system), users gain access to more in-depth knowledge. It enhances their learning experience and allows them to explore the subject further after completing the quiz. Integrating the YouTube API creates an interactive and dynamic experience, allowing users to directly access a video without leaving the quiz interface.
 
 ### **404 page**
 
-### **JavaScript Functionality**
+<details><summary>Screenshots</summary>
+
+<img src="assets/images/docs/404page.png" width=300px>
+</details>
+
+* A 404 page is an error page displayed when a user tries to access a webpage that cannot be found on the server. This can happens when the user mistypes a URL, the page has been moved or deleted or the link is broken or outdated. It informs users that the page they were looking for does not exist or cannot be found. It includes a button that guide users back to main sections.  The 404 page is crucial for handling errors in a way that keeps users on the site and offers them a smooth navigation experience.
+
+### **The Quiz**
+
+<details><summary>Video</summary>
+
+<img src="assets/images/docs/quiz-video-1.gif">
+
+<img src="assets/images/docs/quiz-video-2.gif">
+</details>
+
+[Back to top](#table-of-content)
+
+## JavaScript Functionality
 
 ## Future features
 
@@ -414,6 +513,8 @@ All images have been downloaded from: [Pexels](https://www.pexels.com/) and [Fre
     + used for Markdown syntax.
 + [Markdown Tools](https://www.markdowntools.com/)
     + used for Markdown syntax.
++ [JavaScript Tutor](https://javascript.info/)
+    + used for additional resource for learning JavaScript.
 
 [Back to top](#table-of-content)
 

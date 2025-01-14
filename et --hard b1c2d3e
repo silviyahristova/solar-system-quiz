@@ -1,0 +1,44 @@
+[33m33507e1[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmain[m[33m)[m feat: add large gif files using git large file storage
+[33m0a5513a[m Track GIF files with Git LFS
+[33m3fd30f3[m fix:remove gif files due to exceeding the size limits
+[33m4462d08[m feat: complete feature section in README file and add images in the file
+[33m1285916[m[33m ([m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m)[m feat: fill Feature section and Credits section in README file and add images
+[33m8cd6c8f[m feat : create TESTING file and add images in docs folder in assets#
+[33ma5b0eaa[m feat: add future features, deployment, credits, acknowledgements section in README file
+[33m4872b22[m feat: add more comments in js files
+[33m0676bae[m fix: change file names with lowercase
+[33m5952f34[m fix: change the file names with lowercase
+[33m325b644[m fix: add classes in html file and amend layout in css file
+[33m35f1cb1[m fix: remove Prettier extension, arrange the lines and amend const correctly in js files
+[33m3f64c4b[m fix: remove Prettier extension and arrange the lines in the IDE in all html files
+[33m5f036da[m feat: add different type of image files and amend background color and font-sizes in style css file
+[33md1ec9ef[m fix: amend the opacity for the home box in game.js file
+[33mf2d88eb[m feat: add media queries for mobile, tablet and desktop devices
+[33m60a24d2[m fix: amend the html structure in index.html file
+[33md0d9cc6[m feat: move function for logo and footer to a new js file to be able to add to all html without having all the not needed function in the rest of the html files
+[33m39e1efa[m  feat: add script for logo and footer and add link to start quiz button, remove the instyle for background image
+[33m9e7cabe[m feat:add script to 404 page for logo and footer
+[33m6e0b61b[m feat: add background images to contact and 404 pages, change the height vh to svh to fit better for all devices without overflow
+[33m5414949[m feat: add alert message when user sent the email to know that is sent
+[33maffd27d[m feat: create js file for keeping the logo and footer in the all main divs and in the all html files
+[33mb405753[m feat: mute the video when button start again the quiz is clicked in the game.js file
+[33m024911b[m fix: change the sentences in how to ply section in index.html file
+[33m48cf897[m fix: fix spelling mistake in question-array.js file
+[33m3728462[m fix: change the image for the result box in css file
+[33mf90fea3[m feat: add class attribute to start again button in home page
+[33mc0be228[m feat: add to start again button the function to shuffle again the question and to show different questions, change in the result box video to be the one i choose not from the search, and change the video to not autoplay when the result box is opening in game.js file
+[33m69b1312[m feat: add function to Start again button at the end of the quiz, make API KEY for youtube restricted in game.js file
+[33mb305806[m feat: add secret.dart to .gitignore
+[33m5b690f1[m feat: add youtube api and embed a video about solar system in game.js
+[33m933b8d4[m feat: add youtube api script to index.html file
+[33m93a7469[m fix: edit punctuational mistake in questions-array.js file
+[33m71bd006[m feat: add circular progress bar in percent in result box and messages to different scores in game.js
+[33mb1b7ca5[m feat: add an alert message when the last question is not answered on time in game.js file
+[33mc502179[m feat: add function to show the results and adjust the timer and sounds functions, sounds and timer are not playing when the last question is answered and next button is clicked to open the result box, in game.js file
+[33m7b61f87[m feat: add if/else if/else to username to check for the lenght of the entered name, not working properly only with html in game.js file
+[33m45cceda[m feat: make the sound for 15sec left to stop,reset and play again if needed for the next question after answering the current question
+[33mcef6e1e[m feat: add more comments to the functions in game.js file
+[33mc92c701[m feat: user can control the sound using the sound toggle button, music in off by default
+[33m0025b78[m fix: change the path to the image file in contact.html file
+[33m145b156[m feat: add timer function in game.js file
+[33me325b5c[m fix: change the outlining for the correct and wrong answers in css file, add question mark to a question in js file
