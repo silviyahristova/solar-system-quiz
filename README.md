@@ -339,19 +339,19 @@ The sounds in the quiz are from [FreeSound](https://freesound.org/) website. The
 
 * Correct answer is selected
 
-<img src="assets/images/docs/correct-answer-select.png" width=300px>
+<img src="assets/images/docs/correct-answer-select.png">
 
 * Wrong answer is selected
 
-<img src="assets/images/docs/wrong-answer-select.png" width=300px>
+<img src="assets/images/docs/wrong-answer-select.png">
 
 * Next button is off
 
-<img src="assets/images/docs/next-button-off.png" width=300px>
+<img src="assets/images/docs/next-button-off.png">
 
 * Next button is on
 
-<img src="assets/images/docs/next-button-on.png" width=300px>
+<img src="assets/images/docs/next-button-on.png">
 </details>
 
 * The Question and Answer Area is the central part of the quiz designed for user interaction. It displays the current question in a clear and prominent format, along with multiple-choice answer options, four, where one is correct. Users can select an answer by clicking on an option, triggering immediate feedback — highlighting the correct answer in green and the incorrect one in red, with corresponding sounds if the audio is enabled. The area works alongside navigation button "Next" to record responses and proceed to the next question. Key features include a visually prominent question display, interactive answer options with hover effects, and a feedback mechanism to indicate correctness. This area ensures clarity by focusing users on one question at a time, enhances engagement with interactive feedback, and provides a well-structured layout for a seamless quiz experience. It is the most critical part of the quiz, enabling users to actively participate and complete it effectively.
@@ -404,6 +404,154 @@ The sounds in the quiz are from [FreeSound](https://freesound.org/) website. The
 [Back to top](#table-of-content)
 
 ## JavaScript Functionality
+
+### Variables and Setup
+
+* Quiz Control Variables 
+
+    * Variables like username, userScore, questionCount, and questionNumb, quizOn, timeLeft  are used to track the state of the quiz, including the participant's name, score, current question number, and the remaining time.
+
+* Timers and Sound 
+    
+    * Variables like countdown, timeLeft, soundOn, and audio files (soundCorrect, soundWrong, etc.) are used for managing the countdown timer and the sound effects.
+
+* HTML Elements 
+    
+    * The document.getElementById and document.querySelector methods are used to select HTML elements like buttons, text areas, and containers (e.g., startButton, nextButton, quizBox, etc.) for interaction.
+
+    * The nameInput, emailInput, messageInput, and subjectInput elements capture the user's input.
+
+* Array of Objects
+    
+    * myQuestions is an array where each element represents a question in the quiz. Properties of Each Object in the Array are:
+    * questionNumber - the unique identifier for the question, primarily used for referencing or display.
+    * questionText - the actual question displayed to the user.
+    * options - an array of answer choices for the question. These are displayed as clickable buttons in the quiz UI.
+    * correctAnswer -  the index of the correct option in the options array.
+
+### Event Listeners & Functions
+
+* Start Button 
+
+    * When the user clicks the "Start" button, the script first checks if the user has entered a valid name. If the name is valid (at least 3 characters long), it proceeds to show the rules box. If the name is invalid, it alerts the user to correct it.
+
+* Exit Button 
+
+    * When the "Exit" button is clicked, the quiz returns to the main page by removing the rules box and showing the home box again.
+
+* Continue Button 
+
+    * Clicking the "Continue" button hides the rules box, shows the quiz box, and starts the timer. It also begins displaying the first question, keeps track of the question number, and updates the score counter.
+
+* Next Button 
+
+    * This button triggers when the user answers a question. It checks if there are more questions in the array (myQuestions). If there are, it moves to the next question, resets the timer, and starts it again. If all questions have been answered, it stops the timer and shows the result box.
+
+* Restart Button 
+
+    * Clicking the restart button reloads the page to start over from the beginning.
+
+* Start Again Button 
+
+    * This button reinitializes the quiz, resetting the score, question count, and timer, and then re-starts the quiz from the first question.
+
+* Shuffling Question 
+
+    * shuffleArray(arr) function takes an array and shuffles its elements randomly using the Fisher-Yates algorithm. This ensures that both the order of questions and the order of options in each question are randomized.
+
+* Limiting the Questions
+
+    * After shuffling the array of questions (myQuestions), the quiz selects the first 10 questions using slice(0, 10). This ensures that the quiz is capped at 10 questions.
+
+* Displaying Questions 
+
+    * showQuestion(index) function displays the question at the given index from the shuffled list. Dynamically creates buttons for the question's options using the answerList container.Options for each question are also shuffled using shuffleArray([...currentQuestion.options]) to randomize their order. Each answer button has an event listener attached. Clicking an option triggers the answerSelected() function.
+
+* Handling User Answers 
+
+    * answerSelected(answer, index) function determines if the selected answer matches the correct one for the current question. If correct, the button is highlighted with a
+    "correct" class, and a "correct" sound is played if sounds are enabled. If incorrect, the button is highlighted with an "incorrect" class, and the correct answer is also highlighted. The user's score is incremented for correct answers (userScore += 1).
+
+* Disabling Options
+
+    * After an answer is selected, all answer buttons are disabled to prevent multiple submissions. This ensures fairness in the quiz flow.
+
+* Stopping Timer and Sounds
+
+    * The timer is stopped, and any sounds related to the timer are paused after an answer is selected.
+
+* Next Button
+
+    * The nextButton becomes active after an answer is selected. Clicking it calls nextQuestion(), which moves to the next question if there are any remaining. If the current question is the last one, it triggers the result page using showResultBox(). Resets and restarts the timer for the new question.
+
+* Handling the Last Question
+
+    * handleLastQuestion() function is called when the user reaches the last question in the quiz. It stops the timer and all sounds using stopTimer() and resetAllSounds(). Then displays the result box using showResultBox().
+
+* User Feedback and Sounds
+
+    * Feedback is provided visually by changing the button styles to indicate correct or incorrect answers. Sounds (soundCorrect, soundWrong, soundTimer) are played conditionally based on the soundOn flag: Correct answer will play "correct" sound. Incorrect answer will play "wrong" sound. Timer running low will play "timer" sound.
+
+* Quiz Initialization
+
+    * showQuestion(currentQuestionIndex): This is initially called to display the first question when the quiz starts. Questions and their options are shuffled before being displayed to make each quiz session unique.
+
+* Question and Score Tracking
+    
+    * questionCounter(index): Updates the question count displayed on the screen.
+    * countScore(): Updates the score display as the user answers questions correctly.
+
+* Timer Logic
+
+    * startTimer(): Initializes a countdown timer that starts at timeLeft seconds (default 30). Every second, the timer decreases, and the remaining time is displayed. If time reaches 15 seconds and sounds are enabled, a warning sound is played. If time runs out- stops the timer and displays "Time's up!". Calls handleTimeUp() to handle what happens next (e.g., automatically moving to the next question). 
+
+    * stopTimer(): Stops the timer and resets any timer-related sounds to their initial state.
+
+    * handleTimeUp(): Determines the next steps when time runs out for a question: If the quiz is on the last question, shows the result box directly. Otherwise, automatically proceeds to the next question, simulating a click on the "Next" button.
+
+* Sound Management
+
+    * sound Toggle: Allows the user to turn sounds on or off via a toggle (soundToggle). If turned on background music starts playing in a loop. If turned off all sounds, including the background music, are stopped and reset using resetAllSounds().
+    
+    * resetAllSounds(): stops all audio elements (background music, timer sound, correct/incorrect answer sounds) and resets their playback position.
+    
+    * playSound(sound): plays a specific sound (e.g., correct answer sound) if sounds are enabled.
+
+* Result Handling
+
+    * showResultBox(): Stops the timer and resets all sounds when the quiz ends. Displays the result box with a progress circle animated to show the user's score as a percentage. A custom message based on the score: 100%: "Well done, you are a true space explorer!". 50% or more: "Great job, you scored really high!". Below 50%: "Good effort, keep practicing to improve." Uses an animation loop to visually fill the progress circle from 0% to the calculated score percentage.
+
+* Embedding a YouTube Video
+
+    * embedYouTubeVideo(videoId): dynamically embeds a YouTube video in the quiz result page using an iframe. The video is autoplayed (muted by default) when the quiz ends. Prevents stacking of multiple videos in the DOM by clearing any existing video elements before adding a new one.
+
+    * searchVideo function is designed to fetch a list of videos from YouTube based on a specific query. It retrieves the first video's ID and passes it to the embedYouTubeVideo function to display the video. The API key is necessary for authentication. The key is restricted for this application only. The function is not currently in use in the project but remains a learning resource for exploring API integrations. Future updates could include implementing this functionality for dynamic video searches.
+
+    <details><summary>Screenshot</summary>
+
+    <img src="assets/images/docs/api-key-restricted.png">
+    </details>
+
+* EmailJS Service
+
+    * The emailjs.send method is used to send the email asynchronously using the send method. If email sending fails, the user is redirected to a "404" page, ensuring a graceful fallback. It requires serviceID, templateID. 
+
+    * The emailjs.init("public-key") function is used to initialize EmailJS with the unique public key. This key links the frontend application with EmailJS account securely, allowing to send emails.
+
+    <details><summary>Screenshot</summary>
+
+    <img src="assets/images/docs/email-js-template.png">
+    </details>
+ 
+* Server.js
+
+    * The server listens on port 3000. When a request is received it attempts to serve the index.html file. If successful, it sends the file's content as the response. If an error occurs (e.g., the file is missing), it sends a 404 response with an error message.
+
+    * This file is included in the project for learning purpose. It is designed to demonstrate how to create a basic HTTP server using Node.js, handle file reading, and respond to client requests. The functionality provided by this file is not needed for the core functionality of the project.
+
+* Logo-footer.js
+
+    * The headerHTML and footerHTML strings store the HTML structure for the header and footer and dynamically embeds them into specified sections of the webpage (.box-logo and .box-footer) using JavaScript. It promotes clean code and ensures consistency and maintainability across the project.
 
 ## Future features
 
@@ -483,7 +631,7 @@ The project will now be cloned locally for you to use.
 
 ### Images and Sounds
 
-All images have been downloaded from: [Pexels](https://www.pexels.com/) and [Freepik](https://www.freepik.com/). The sounds have been downloaded from [FreeSound](https://freesound.org/).
+All images have been downloaded from: [Pexels](https://www.pexels.com/), [Pixabay](https://pixabay.com) and [Freepik](https://www.freepik.com/). The sounds have been downloaded from [FreeSound](https://freesound.org/).
 
 ### Code
 
@@ -515,6 +663,8 @@ All images have been downloaded from: [Pexels](https://www.pexels.com/) and [Fre
     + used for Markdown syntax.
 + [JavaScript Tutor](https://javascript.info/)
     + used for additional resource for learning JavaScript.
++ [Fisher-Yates Shuffle Algorithm](https://www.nobledesktop.com/learn/javascript/fisher-yates-shuffle-algorithm)
+    + used as a learning resource about the algorithm
 
 [Back to top](#table-of-content)
 
