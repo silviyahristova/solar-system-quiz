@@ -244,7 +244,7 @@ function handleLastQuestion() {
 //Count the question 
 function questionCounter (index) {
     const questionTotal = document.querySelector('.count-question');
-    questionTotal.textContent = `Question ${index} of ${maxQuestions}`;
+    questionTotal.textContent = `Question ${index} out of ${maxQuestions}`;
 }
 
 //Count the scores

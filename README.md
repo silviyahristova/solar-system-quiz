@@ -243,7 +243,7 @@ The sounds in the quiz are from [FreeSound](https://freesound.org/) website. The
 
 * All the links that look like a button and buttons have a hover effect. They navigate users through the site. When a user clicks the button, a JavaScript function is triggered to change the current page or navigate to a different section of the site.
 
-* Restart button allows the user to go back to the main section. Th button has a hover effect with a colour transition. The button has transparent background, rather than other buttons, this will not draw the user's attention away from the game. 
+* Restart button allows the user to go back to the main section. The button has a hover effect with a colour transition. Also has transparent background, rather than other buttons, this will not draw the user's attention away from the game. 
 
 * The "Start" button triggers an alert message if the name input field is not filled. If the input field contains a name, it proceeds to display the "How to Play" section.
 
