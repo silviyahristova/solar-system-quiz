@@ -549,6 +549,8 @@ The sounds in the quiz are from [FreeSound](https://freesound.org/) website. The
 
     * This file is included in the project for learning purpose. It is designed to demonstrate how to create a basic HTTP server using Node.js, handle file reading, and respond to client requests. The functionality provided by this file is not needed for the core functionality of the project.
 
+    * The server.js file is intentionally located in the root of the project, as required, rather than in the assets folder where the other JavaScript files are stored.
+
 * Logo-footer.js
 
     * The headerHTML and footerHTML strings store the HTML structure for the header and footer and dynamically embeds them into specified sections of the webpage (.box-logo and .box-footer) using JavaScript. It promotes clean code and ensures consistency and maintainability across the project.
